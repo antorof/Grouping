@@ -1,0 +1,76 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+   		<item name="android:windowAnimationStyle">@null</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+   		<item name="android:actionBarTabStyle">@style/MyActionBarTabs</item>
+   		<item name="android:actionBarDivider">@null</item>
+    	<item name="android:actionBarTabTextStyle">@style/MyActionBarTabsText</item> 
+		<item name="android:actionModeBackground">@color/theme_primary</item>
+    </style>
+
+	<!-- ActionBar Style -->    
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/theme_primary</item>
+    </style>
+    
+	<!-- ActionBar Tabs Style -->    
+    <style name="MyActionBarTabs">
+    	<item name="android:background">@drawable/tab_bar_selector</item>
+    	<item name="android:gravity">center</item>
+    </style>
+    
+	<!-- ActionBar Title Tabs Style -->    
+    <style name="MyActionBarTabsText" parent="android:style/Widget.Holo.Light.ActionBar.TabText">
+    	<item name="android:textColor">@color/selector_tab_text</item>
+    </style>
+    
+   	<style name="TitleList" parent="@android:style/TextAppearance">
+		<item name="android:textColor">#A4A4A4</item>
+       	<item name="android:textSize">20sp</item>
+       	<item name="android:paddingLeft">12dp</item>
+       	<item name="android:paddingTop">10dp</item>
+   	</style>
+   
+   	<style name="ProductText" parent="@android:style/TextAppearance">
+       	<item name="android:paddingLeft">12dp</item>
+   	</style>
+   
+	<style name="ProductName" parent="ProductText">
+       	<item name="android:textColor">@color/primary_text</item>
+       	<item name="android:paddingTop">10dp</item>
+       	<item name="android:textSize">20sp</item>
+   	</style>
+   
+	<style name="ProductSubname" parent="ProductText">
+ 		<item name="android:textColor">@color/secondary_text</item>
+       	<item name="android:textSize">12sp</item>
+   	</style>
+	
+	<style name="RoommatesGrid" parent="@android:style/TextAppearance">
+       	<item name="android:gravity">center</item>
+	</style>
+	
+	<style name="RoommatesTitleGrid" parent="RoommatesGrid">
+       	<item name="android:textSize">14sp</item>
+       	<item name="android:textColor">@color/secondary_text</item>
+	</style>
+	
+	<style name="RoommatesSubtitleGrid" parent="RoommatesGrid">
+       	<item name="android:textSize">18sp</item>
+       	<item name="android:textStyle">bold</item>
+	</style>
+</resources>

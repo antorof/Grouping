@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="vertical"
+    android:background="@drawable/list_item_selector" >
+    
+    <CheckBox 
+        android:id="@+id/product_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+    
+    <ImageView
+        android:id="@+id/product_purchaser"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/user_icon"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/add_button_description" />
+    
+	<ImageView
+        android:id="@+id/product_purchaser_selected"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/icon_selected"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        android:contentDescription="@string/user_icon_selected_description"/>
+    
+    <TextView 
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/product_purchaser"
+        android:paddingRight="55dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        style="@style/ProductName"/>
+       
+	<TextView 
+        android:id="@+id/product_subname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/product_purchaser"
+        android:layout_below="@id/product_name"
+        android:maxLines="2"
+        android:ellipsize="end"
+        style="@style/ProductSubname"/>
+		
+	<TextView 
+        android:id="@+id/product_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="4dp"
+        android:textColor="@color/secondary_text"/>
+    
+</RelativeLayout>

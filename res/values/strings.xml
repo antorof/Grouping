@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RoomMates</string>
+    <string name="action_purchased">Mark As Purchased</string>
+    <string name="action_urgent">Mark As Urgent</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Navdrawer -->
+    
+    <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
+    
+    <string name="navdrawer_item_summary">Summary</string>
+    <string name="navdrawer_item_groceries">Groceries</string>
+    <string name="navdrawer_item_tasks">Tasks</string>
+    <string name="navdrawer_item_bills">Bills</string>
+    <string name="navdrawer_item_roommates">Roommates</string>
+    <string name="navdrawer_item_settings">Settings</string>
+
+	<string name="add_button_description">Button to add a item to the App</string>
+	<string name="user_icon_description">User icon on a list item</string>
+	<string name="user_icon_selected_description">User icon selected on a list item</string>
+    
+	<!-- Groceries Activity -->
+	
+    <string name="urgent_list">Urgent</string>
+    <string name="normal_list">Products</string>
+    <string name="toast_deleted_item"> items deleted</string>
+    <string name="toast_added_urgent"> items marked as urgent</string>
+    <string name="toast_deleted_urgent"> items deleted as urgent</string>
+    
+    <!-- Roommates Activity -->
+    
+    <string name="groceries_title">Groceries</string>
+    <string name="tasks_title">Tasks</string>
+    <string name="bills_title">Bills</string>
+    
+</resources>
