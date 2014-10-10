@@ -390,7 +390,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 		SQLiteDatabase db = mDBHelper.getWritableDatabase();
 		
 		ContentValues values = new ContentValues();
-		values.put(Product.PRODUCT_NAME, "Pañales");
+		values.put(Product.PRODUCT_NAME, "Pañales2");
 		values.put(Product.PRODUCT_SUBNAME, "Que sean Golden!");
 		values.put(Product.PRODUCT_DAY, "16");
 		values.put(Product.PRODUCT_MONTH, "8");
