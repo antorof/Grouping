@@ -64,10 +64,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:paddingTop="5dp"
-        android:paddingRight="50dp"
-	    android:textSize="12sp"
-        android:text="@string/date_from"
-        android:textColor="@color/secondary_text"/>
+		android:paddingRight="50dp"
+		android:textSize="12sp"
+		android:text="@string/date_from"
+		android:textColor="@color/secondary_text"/>
 	
 	<TextView
 	    android:id="@+id/task_date_sub1"
@@ -76,7 +76,7 @@
 	    android:layout_alignParentRight="true"
 	    android:layout_alignParentTop="true"
 	    android:paddingRight="5dp"
-        android:paddingTop="5dp"
+		android:paddingTop="5dp"
 	    android:paddingLeft="2dp"
 	    android:textSize="12sp"
 	    android:gravity="left"
@@ -90,21 +90,21 @@
         android:layout_alignParentRight="true"
         android:paddingTop="17dp"
         android:paddingRight="50dp"
-	    android:textSize="12sp"
+		android:textSize="12sp"
         android:text="@string/date_to"
         android:textColor="@color/secondary_text"/>
 		
 	<TextView
-	    android:id="@+id/task_date_sub2"
-	    android:layout_width="50dp"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentRight="true"
-	    android:layout_alignParentTop="true"
-	    android:paddingRight="10dp"
-	    android:paddingTop="17dp"
-	    android:paddingLeft="2dp"
-	    android:textSize="12sp"
-	    android:gravity="left"
-	    android:textColor="@color/secondary_text" />
+		android:id="@+id/task_date_sub2"
+		android:layout_width="50dp"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentTop="true"
+		android:paddingRight="10dp"
+		android:paddingTop="17dp"
+		android:paddingLeft="2dp"
+		android:textSize="12sp"
+		android:gravity="left"
+		android:textColor="@color/secondary_text" />
     
 </RelativeLayout>
