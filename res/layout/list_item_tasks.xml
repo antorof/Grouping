@@ -6,13 +6,13 @@
     android:background="@drawable/list_item_selector" >
     
     <CheckBox 
-        android:id="@+id/product_check_box"
+        android:id="@+id/task_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"/>
     
     <ImageView
-        android:id="@+id/product_purchaser"
+        android:id="@+id/task_purchaser"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:contentDescription="@string/add_button_description" />
     
 	<ImageView
-        android:id="@+id/product_purchaser_selected"
+        android:id="@+id/task_purchaser_selected"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
@@ -39,32 +39,72 @@
         android:contentDescription="@string/user_icon_selected_description"/>
     
     <TextView 
-        android:id="@+id/product_name"
+        android:id="@+id/task_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/product_purchaser"
+        android:layout_toRightOf="@id/task_purchaser"
         android:singleLine="true"
         android:ellipsize="end"
-        style="@style/ProductName"/>
+        style="@style/TaskName"/>
        
 	<TextView 
-        android:id="@+id/product_subname"
+        android:id="@+id/task_subname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/product_purchaser"
-        android:layout_below="@id/product_name"
+        android:layout_toRightOf="@id/task_purchaser"
+        android:layout_below="@id/task_name"
         android:maxLines="2"
         android:ellipsize="end"
-       	style="@style/ProductSubname"/>
+        style="@style/ProductSubname"/>
 		
 	<TextView 
-        android:id="@+id/product_date"
+        android:id="@+id/task_date_title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:paddingTop="5dp"
-        android:paddingRight="10dp"
+        android:paddingRight="50dp"
+	    android:textSize="12sp"
+        android:text="@string/date_from"
         android:textColor="@color/secondary_text"/>
+	
+	<TextView
+	    android:id="@+id/task_date_sub1"
+	    android:layout_width="50dp"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentTop="true"
+	    android:paddingRight="5dp"
+        android:paddingTop="5dp"
+	    android:paddingLeft="2dp"
+	    android:textSize="12sp"
+	    android:gravity="left"
+	    android:textColor="@color/secondary_text" />
+	
+	<TextView 
+        android:id="@+id/task_date_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:paddingTop="17dp"
+        android:paddingRight="50dp"
+	    android:textSize="12sp"
+        android:text="@string/date_to"
+        android:textColor="@color/secondary_text"/>
+		
+	<TextView
+	    android:id="@+id/task_date_sub2"
+	    android:layout_width="50dp"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentTop="true"
+	    android:paddingRight="10dp"
+	    android:paddingTop="17dp"
+	    android:paddingLeft="2dp"
+	    android:textSize="12sp"
+	    android:gravity="left"
+	    android:textColor="@color/secondary_text" />
     
 </RelativeLayout>

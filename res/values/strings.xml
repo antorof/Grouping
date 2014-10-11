@@ -31,6 +31,10 @@
     <string name="toast_added_urgent"> items marked as urgent</string>
     <string name="toast_deleted_urgent"> items deleted as urgent</string>
     
+    <!-- Task Activity -->
+    <string name="date_from">From:</string>
+    <string name="date_to">To:</string>
+    
     <!-- Roommates Activity -->
     
     <string name="groceries_title">Groceries</string>
