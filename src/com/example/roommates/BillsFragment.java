@@ -92,9 +92,9 @@ public class BillsFragment extends BaseFragment
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
 			{
-				final ImageView productPurchaserIcon = (ImageView) view.findViewById(R.id.product_purchaser);
-				final ImageView selectedIcon = (ImageView) view.findViewById(R.id.product_purchaser_selected);
-				CheckBox checkBox = (CheckBox) view.findViewById(R.id.product_check_box);
+				final ImageView productPurchaserIcon = (ImageView) view.findViewById(R.id.icon_purchaser);
+				final ImageView selectedIcon = (ImageView) view.findViewById(R.id.icon_purchaser_selected);
+				CheckBox checkBox = (CheckBox) view.findViewById(R.id.item_check_box);
 
 				// Cambiamos el estado del checkbox. Dependiendo del nuevo estado se
 				// modifica el diseño del item para que el usuario conozca el estado
@@ -213,6 +213,14 @@ public class BillsFragment extends BaseFragment
         			if(cursorUser.getInt(cursorUser.getColumnIndexOrThrow(User._ID)) == previousPurchaserId)
         			{
         				found = true;
+        				
+        				// Incrementamos la cantidad del usuario gastado en Groceries
+        	    		ContentValues valuesUser = new ContentValues();
+        				valuesUser.put(User.USER_GROCERIES, 
+        	    				cursorUser.getInt(cursorUser.getColumnIndexOrThrow(User.USER_GROCERIES))+1);
+        	    		
+        	    		db.update(Tables.USERS, valuesUser, User._ID+"=?", new String[]{String.valueOf(previousPurchaserId)});
+        				
         				// Si lo encontramos hay que coger el siguiente
         				if(!cursorUser.moveToNext())
         					cursorUser.moveToFirst();
@@ -228,6 +236,7 @@ public class BillsFragment extends BaseFragment
 	    		
 	    		db.update(Tables.PRODUCTS, values, Product._ID+"=?", 
 						new String[]{String.valueOf(rowView.getTag())});
+	    		values.clear();
 	    		
 	    		ModelProduct mp = (ModelProduct) lista.getItemAtPosition((checkedList.keyAt(i)+1));
 
@@ -259,10 +268,28 @@ public class BillsFragment extends BaseFragment
     	mAdapter.sort(new SortByDate());
 		mAdapter.notifyDataSetChanged();
     	db.close();
-    	
-    	String mensaje = isSpecialList ? getResources().getString(R.string.toast_deleted_urgent) :
+	}
+
+	@Override
+	protected void createToastDelete(int size) 
+	{		
+		String mensaje = getResources().getString(R.string.toast_deleted_item);
+		UIUtils.crearToast(size + " " + mensaje, getActivity());
+	}
+
+	@Override
+	protected void createToastToggle(int size) 
+	{
+		String mensaje = isSpecialList ? getResources().getString(R.string.toast_deleted_urgent) :
 										getResources().getString(R.string.toast_added_urgent);
-    	UIUtils.crearToast(deleteFromAdapter.size() + " " + mensaje, getActivity());
+    	UIUtils.crearToast(size + " " + mensaje, getActivity());
+	}
+
+	@Override
+	protected void createToastDone(int size) 
+	{
+		String mensaje = getResources().getString(R.string.toast_purchased_item);
+		UIUtils.crearToast(size + " " + mensaje, getActivity());
 	}
 	
 	@Override
@@ -311,8 +338,8 @@ public class BillsFragment extends BaseFragment
 			TextView textName = (TextView) rowView.findViewById(R.id.product_name);
 			TextView textSubame = (TextView) rowView.findViewById(R.id.product_subname);
 			TextView textDate = (TextView) rowView.findViewById(R.id.product_date);
-			ImageView image = (ImageView) rowView.findViewById(R.id.product_purchaser);
-			CheckBox checkbox = (CheckBox) rowView.findViewById(R.id.product_check_box);
+			ImageView icon = (ImageView) rowView.findViewById(R.id.icon_purchaser);
+			CheckBox checkbox = (CheckBox) rowView.findViewById(R.id.item_check_box);
 			
 			textName.setText(product.name);
 			textSubame.setText(product.subname);
@@ -331,7 +358,7 @@ public class BillsFragment extends BaseFragment
 			if(cursor.getCount() != 0)
 			{
 				String color = cursor.getString(cursor.getColumnIndexOrThrow(User.USER_COLOR));
-				image.setColorFilter(UIUtils.getColor(getActivity(), color));
+				icon.setColorFilter(UIUtils.getColor(getActivity(), color));
 			}
 			
 			checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
@@ -378,6 +405,7 @@ public class BillsFragment extends BaseFragment
 	{
 		String[] PROJECTION = {
 	    			User._ID,
+	    		 	User.USER_GROCERIES,
 	    		 	User.USER_COLOR,
 	    		 	User.USER_LETTER,
 		};

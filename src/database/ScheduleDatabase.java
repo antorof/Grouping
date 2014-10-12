@@ -12,8 +12,6 @@ public class ScheduleDatabase extends SQLiteOpenHelper
 	private static String DATABASE_NAME = "database.db";
 	
 	private static int DATABASE_VERSION = 1;
-	
-    private final Context mContext;
     
     public interface Tables
     {
@@ -24,7 +22,6 @@ public class ScheduleDatabase extends SQLiteOpenHelper
 	public ScheduleDatabase(Context context) 
 	{
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
-		mContext = context;
 	}	 
 	
 	@Override

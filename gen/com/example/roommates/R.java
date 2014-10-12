@@ -82,15 +82,15 @@ public final class R {
         public static final int container=0x7f0a0003;
         public static final int drawer_layout=0x7f0a0000;
         public static final int icon=0x7f0a0023;
+        public static final int icon_purchaser=0x7f0a0009;
+        public static final int icon_purchaser_selected=0x7f0a000a;
+        public static final int item_check_box=0x7f0a0008;
         public static final int list_groceries=0x7f0a0006;
         public static final int list_roommates=0x7f0a0007;
         public static final int navdrawer=0x7f0a0022;
         public static final int pager_title_strip=0x7f0a0002;
-        public static final int product_check_box=0x7f0a0008;
         public static final int product_date=0x7f0a000d;
         public static final int product_name=0x7f0a000b;
-        public static final int product_purchaser=0x7f0a0009;
-        public static final int product_purchaser_selected=0x7f0a000a;
         public static final int product_subname=0x7f0a000c;
         public static final int task_check_box=0x7f0a0019;
         public static final int task_date_sub1=0x7f0a001f;
@@ -143,18 +143,18 @@ public final class R {
         public static final int action_urgent=0x7f070002;
         public static final int add_button_description=0x7f07000d;
         public static final int app_name=0x7f070000;
-        public static final int bills_title=0x7f070019;
+        public static final int bills_title=0x7f07001a;
         /**  Task Activity 
          */
-        public static final int date_from=0x7f070015;
-        public static final int date_to=0x7f070016;
+        public static final int date_from=0x7f070016;
+        public static final int date_to=0x7f070017;
         public static final int drawer_close=0x7f070006;
         /**  Navdrawer 
          */
         public static final int drawer_open=0x7f070005;
         /**  Roommates Activity 
          */
-        public static final int groceries_title=0x7f070017;
+        public static final int groceries_title=0x7f070018;
         public static final int navdrawer_item_bills=0x7f07000a;
         public static final int navdrawer_item_groceries=0x7f070008;
         public static final int navdrawer_item_roommates=0x7f07000b;
@@ -162,10 +162,11 @@ public final class R {
         public static final int navdrawer_item_summary=0x7f070007;
         public static final int navdrawer_item_tasks=0x7f070009;
         public static final int normal_list=0x7f070011;
-        public static final int tasks_title=0x7f070018;
+        public static final int tasks_title=0x7f070019;
         public static final int toast_added_urgent=0x7f070013;
         public static final int toast_deleted_item=0x7f070012;
         public static final int toast_deleted_urgent=0x7f070014;
+        public static final int toast_purchased_item=0x7f070015;
         /**  Groceries Activity 
          */
         public static final int urgent_list=0x7f070010;

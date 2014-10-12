@@ -81,4 +81,22 @@ public class TasksFragment extends BaseFragment
 		
 	}
 
+	@Override
+	protected void createToastDelete(int size) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void createToastToggle(int size) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void createToastDone(int size) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

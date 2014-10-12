@@ -30,6 +30,7 @@
     <string name="toast_deleted_item"> items deleted</string>
     <string name="toast_added_urgent"> items marked as urgent</string>
     <string name="toast_deleted_urgent"> items deleted as urgent</string>
+    <string name="toast_purchased_item"> items purchased</string>
     
     <!-- Task Activity -->
     <string name="date_from">From:</string>

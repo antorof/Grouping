@@ -25,9 +25,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
-
-import com.example.roommates.Utils.UIUtils;
-
 import database.ScheduleContract.Product;
 import database.ScheduleContract.User;
 import database.ScheduleDatabase;
@@ -117,7 +114,6 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
             @Override
             public void onClick(View view) 
             {
-            	// AÑADIR LLAMAR ACTIVITY
             }
         });
 	}
@@ -247,6 +243,23 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 	protected abstract void doneCurrentSelectedItems();
 	
 	/**
+	 * Elimina un elemento de la base de datos
+	 * @param id
+	 */
+	protected abstract void createToastDelete(int size);
+	
+	/**
+	 * Actualiza un elemento de la base de datos entre especial o no
+	 * @param id
+	 */
+	protected abstract void createToastToggle(int size);
+	
+	/**
+	 * Actualiza los elementos de la base de datos como hechos
+	 */
+	protected abstract void createToastDone(int size);
+	
+	/**
 	 * Ordena y notifica al adaptador que se han actualizado sus elementos
 	 */
 	protected abstract void sortAndNotifyAdapter();
@@ -277,9 +290,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
     		deleteItemFromAdapter(p);
 
     	sortAndNotifyAdapter();
-    	
-    	String mensaje = getResources().getString(R.string.toast_deleted_item);
-    	UIUtils.crearToast(eliminar.size() + " " + mensaje, getActivity());
+    	createToastToggle(eliminar.size());
 	}
 	
 	/**
@@ -311,10 +322,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
     	}
 
     	sortAndNotifyAdapter();
-    	
-    	String mensaje = isSpecialList ? getResources().getString(R.string.toast_deleted_urgent) :
-										getResources().getString(R.string.toast_added_urgent);
-    	UIUtils.crearToast(eliminar.size() + " " + mensaje, getActivity());
+    	createToastToggle(eliminar.size());
 	}
 
 	/**
@@ -385,7 +393,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 	 * ELIMINAR: TESTING PARA PROBAR CON UNA BASE DE DATOS
 	 * @param mDBHelper
 	 */
-	protected void añadirValoresBD(ScheduleDatabase mDBHelper)
+	protected static void añadirValoresBD(ScheduleDatabase mDBHelper)
 	{
 		SQLiteDatabase db = mDBHelper.getWritableDatabase();
 		

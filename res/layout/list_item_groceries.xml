@@ -6,13 +6,13 @@
     android:background="@drawable/list_item_selector" >
     
     <CheckBox 
-        android:id="@+id/product_check_box"
+        android:id="@+id/item_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"/>
     
     <ImageView
-        android:id="@+id/product_purchaser"
+        android:id="@+id/icon_purchaser"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:contentDescription="@string/add_button_description" />
     
 	<ImageView
-        android:id="@+id/product_purchaser_selected"
+        android:id="@+id/icon_purchaser_selected"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
@@ -42,7 +42,7 @@
         android:id="@+id/product_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/product_purchaser"
+        android:layout_toRightOf="@id/icon_purchaser"
         android:singleLine="true"
         android:ellipsize="end"
         style="@style/ProductName"/>
@@ -51,7 +51,7 @@
         android:id="@+id/product_subname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/product_purchaser"
+        android:layout_toRightOf="@id/icon_purchaser"
         android:layout_below="@id/product_name"
         android:maxLines="2"
         android:ellipsize="end"

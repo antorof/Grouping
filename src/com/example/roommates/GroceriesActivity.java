@@ -1,6 +1,6 @@
 package com.example.roommates;
 
-import models.ModelProduct;
+import models.ModelBase;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Fragment;
@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.example.roommates.GroceriesFragment.OnListChangedListener;
+import com.example.roommates.BaseFragment.OnListChangedListener;
 
 public class GroceriesActivity extends BaseActivity implements ActionBar.TabListener, OnListChangedListener
 {
@@ -98,10 +98,9 @@ public class GroceriesActivity extends BaseActivity implements ActionBar.TabList
 		public Fragment getItem(int position) 
 		{
 			// getItem is called to instantiate the fragment for the given page.
-		//	fragments[position] = GroceriesFragment.newInstance();
 			Bundle args = new Bundle();
 			args.putInt(GroceriesFragment.ARG_SECTION_NUMBER, position + 1);
-			args.putBoolean(GroceriesFragment.ARG_URGENT_LIST, position == 0 ? true : false);
+			args.putBoolean(GroceriesFragment.ARG_SPECIAL_LIST, position == 0 ? true : false);
 			fragments[position].setArguments(args);
 			return fragments[position];
 		}
@@ -133,7 +132,7 @@ public class GroceriesActivity extends BaseActivity implements ActionBar.TabList
     }
 
 	@Override
-	public void OnListItemMoved(Fragment fragment, ModelProduct product) 
+	public void OnListItemMoved(Fragment fragment, ModelBase product) 
 	{
 		for(int i=0; i<fragments.length; i++)
 			if(fragments[i] != fragment)

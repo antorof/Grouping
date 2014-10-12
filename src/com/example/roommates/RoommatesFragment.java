@@ -24,7 +24,6 @@ import android.widget.TextView;
 import com.example.roommates.Utils.UIUtils;
 
 import database.ScheduleContract;
-import database.ScheduleContract.User;
 import database.ScheduleDatabase;
 import database.ScheduleDatabase.Tables;
 
@@ -93,25 +92,9 @@ public class RoommatesFragment extends Fragment
             {
             	ScheduleDatabase mDBHelper = new ScheduleDatabase(getActivity());
         		SQLiteDatabase db = mDBHelper.getWritableDatabase();
-        		
-            	int size = checkedList.size();
-            	int i=0;
-            	while(i<size)
-            	{
-            		// La lista empieza en el id 1, por lo tanto es necesario un +1
-            		// Obtenemos el id del item que este posicionado en
-            		long idItem = lista.getItemIdAtPosition(checkedList.keyAt(i)+1);
-            		int numRowsDeleted = db.delete(Tables.USERS, BaseColumns._ID+"=?", 
-        					new String[]{String.valueOf(idItem)});
-            		Cursor cursor = getUsers();
-            		adapter.swapCursor(cursor);
-            		adapter.notifyDataSetChanged();
-            		if(numRowsDeleted == 0)
-            			i++;
-            		else
-            			size -= numRowsDeleted;
-            	}
-            	db.close();
+
+            	mDBHelper.onUpgrade(db, 1, 1);
+                BaseFragment.añadirValoresBD(mDBHelper);
             }
         });
 	}
