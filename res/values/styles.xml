@@ -20,6 +20,7 @@
    		<item name="android:actionBarDivider">@null</item>
     	<item name="android:actionBarTabTextStyle">@style/MyActionBarTabsText</item> 
 		<item name="android:actionModeBackground">@color/theme_primary</item>
+		<item name="android:icon">@android:color/transparent</item> <!-- This does the magic! -->
     </style>
 
 	<!-- ActionBar Style -->    
@@ -53,13 +54,13 @@
        	<item name="android:textColor">@color/primary_text</item>
        	<item name="android:paddingRight">55dp</item>
        	<item name="android:paddingTop">5dp</item>
-       	<item name="android:textSize">20sp</item>
+       	<item name="android:textSize">16sp</item>
    	</style>
    
 	<style name="ProductSubname" parent="ProductText">
  		<item name="android:textColor">@color/secondary_text</item>
- 		<item name="android:paddingRight">10dp</item>
-       	<item name="android:textSize">12sp</item>
+       	<item name="android:paddingRight">55dp</item>
+       	<item name="android:textSize">14sp</item>
    	</style>
    	
 	<style name="TaskName" parent="ProductText">

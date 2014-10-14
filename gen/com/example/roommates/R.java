@@ -61,17 +61,18 @@ public final class R {
         public static final int circle=0x7f020001;
         public static final int drawer_shadow=0x7f020002;
         public static final int ic_drawer=0x7f020003;
-        public static final int ic_drawer_explore=0x7f020004;
-        public static final int ic_drawer_launcher=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int icon_selected=0x7f020007;
-        public static final int list_item_selector=0x7f020008;
-        public static final int plus_button_default=0x7f020009;
-        public static final int plus_button_pressed=0x7f02000a;
-        public static final int tab_bar_background_selected=0x7f02000b;
-        public static final int tab_bar_background_selected_pressed=0x7f02000c;
-        public static final int tab_bar_selector=0x7f02000d;
-        public static final int user_icon=0x7f02000e;
+        public static final int ic_drawer2=0x7f020004;
+        public static final int ic_drawer_explore=0x7f020005;
+        public static final int ic_drawer_launcher=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int icon_selected=0x7f020008;
+        public static final int list_item_selector=0x7f020009;
+        public static final int plus_button_default=0x7f02000a;
+        public static final int plus_button_pressed=0x7f02000b;
+        public static final int tab_bar_background_selected=0x7f02000c;
+        public static final int tab_bar_background_selected_pressed=0x7f02000d;
+        public static final int tab_bar_selector=0x7f02000e;
+        public static final int user_icon=0x7f02000f;
     }
     public static final class id {
         public static final int action_delete=0x7f0a0028;

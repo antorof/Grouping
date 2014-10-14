@@ -65,6 +65,7 @@
         android:layout_alignParentRight="true"
         android:paddingTop="5dp"
         android:paddingRight="10dp"
+        android:textSize="12sp"
         android:textColor="@color/secondary_text"/>
     
 </RelativeLayout>
