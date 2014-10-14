@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="72dp"
     android:orientation="vertical"
     android:background="@drawable/list_item_selector" >
     
@@ -13,26 +13,26 @@
     
     <ImageView
         android:id="@+id/icon_purchaser"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:scaleType="fitXY"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/user_icon"
         android:background="@android:color/transparent"
         android:contentDescription="@string/add_button_description" />
     
 	<ImageView
         android:id="@+id/icon_purchaser_selected"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:scaleType="fitXY"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/icon_selected"
         android:background="@android:color/transparent"
         android:visibility="invisible"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/icon_purchaser"
         android:layout_below="@id/product_name"
-        android:maxLines="2"
+        android:singleLine="true"
         android:ellipsize="end"
        	style="@style/ProductSubname"/>
 		
@@ -63,9 +63,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp"
-        android:textSize="12sp"
-        android:textColor="@color/secondary_text"/>
+       	style="@style/ProductDate"/>
     
 </RelativeLayout>

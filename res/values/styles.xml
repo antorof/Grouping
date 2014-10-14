@@ -20,13 +20,19 @@
    		<item name="android:actionBarDivider">@null</item>
     	<item name="android:actionBarTabTextStyle">@style/MyActionBarTabsText</item> 
 		<item name="android:actionModeBackground">@color/theme_primary</item>
-		<item name="android:icon">@android:color/transparent</item> <!-- This does the magic! -->
+		<item name="android:icon">@drawable/action_bar_icon_placeholder</item>
+        <item name="android:actionBarSize">56dp</item>
     </style>
 
 	<!-- ActionBar Style -->    
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/theme_primary</item>
     </style>
+    
+    <style name="AppTheme_ActionBar_Title" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+		<item name="android:textColor">@android:color/white</item>
+		<item name="android:textSize">20sp</item>
+	</style>
     
 	<!-- ActionBar Tabs Style -->    
     <style name="MyActionBarTabs">
@@ -47,22 +53,29 @@
    	</style>
    
    	<style name="ProductText" parent="@android:style/TextAppearance">
-       	<item name="android:paddingLeft">12dp</item>
+       	<item name="android:paddingLeft">16dp</item>
    	</style>
    
 	<style name="ProductName" parent="ProductText">
-       	<item name="android:textColor">@color/primary_text</item>
-       	<item name="android:paddingRight">55dp</item>
-       	<item name="android:paddingTop">5dp</item>
+	    <item name="android:alpha">0.87</item>
+       	<item name="android:paddingRight">60dp</item>
+       	<item name="android:paddingTop">16dp</item>
        	<item name="android:textSize">16sp</item>
    	</style>
    
 	<style name="ProductSubname" parent="ProductText">
- 		<item name="android:textColor">@color/secondary_text</item>
-       	<item name="android:paddingRight">55dp</item>
+	    <item name="android:alpha">0.54</item>
+       	<item name="android:paddingRight">16dp</item>
        	<item name="android:textSize">14sp</item>
    	</style>
    	
+	<style name="ProductDate" parent="ProductText">
+	    <item name="android:alpha">0.54</item>
+       	<item name="android:paddingRight">16dp</item>
+       	<item name="android:paddingTop">16dp</item>
+       	<item name="android:textSize">12sp</item>
+   	</style>
+	
 	<style name="TaskName" parent="ProductText">
        	<item name="android:textColor">@color/primary_text</item>
        	<item name="android:paddingRight">100dp</item>

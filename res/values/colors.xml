@@ -6,9 +6,9 @@
     <color name="theme_primary">#3f51b5</color>
     
     <color name="primary_text">#000000</color>
-    <color name="secondary_text">#6C6C6C</color>
+    <color name="secondary_text">#DBDBDB</color>
     
-	<color name="background">#e6e6e6</color>
+	<color name="background">#FFFFFF</color>
 	<color name="backgroundListItem">#FFFFFF</color>
 	
     <color name="transparent">#00000000</color>

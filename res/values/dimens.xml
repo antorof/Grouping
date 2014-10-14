@@ -6,5 +6,5 @@
     
     <dimen name="list_item_icon">55dp</dimen>
 
-    <dimen name="list_lateral_margin">9dp</dimen>
+    <dimen name="list_lateral_margin">0dp</dimen>
 </resources>

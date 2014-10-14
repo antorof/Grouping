@@ -57,22 +57,23 @@ public final class R {
         public static final int list_lateral_margin=0x7f060003;
     }
     public static final class drawable {
-        public static final int add_button=0x7f020000;
-        public static final int circle=0x7f020001;
-        public static final int drawer_shadow=0x7f020002;
-        public static final int ic_drawer=0x7f020003;
-        public static final int ic_drawer2=0x7f020004;
-        public static final int ic_drawer_explore=0x7f020005;
-        public static final int ic_drawer_launcher=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int icon_selected=0x7f020008;
-        public static final int list_item_selector=0x7f020009;
-        public static final int plus_button_default=0x7f02000a;
-        public static final int plus_button_pressed=0x7f02000b;
-        public static final int tab_bar_background_selected=0x7f02000c;
-        public static final int tab_bar_background_selected_pressed=0x7f02000d;
-        public static final int tab_bar_selector=0x7f02000e;
-        public static final int user_icon=0x7f02000f;
+        public static final int action_bar_icon_placeholder=0x7f020000;
+        public static final int add_button=0x7f020001;
+        public static final int circle=0x7f020002;
+        public static final int divider=0x7f020003;
+        public static final int drawer_shadow=0x7f020004;
+        public static final int ic_drawer=0x7f020005;
+        public static final int ic_drawer_explore=0x7f020006;
+        public static final int ic_drawer_launcher=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int icon_selected=0x7f020009;
+        public static final int list_item_selector=0x7f02000a;
+        public static final int plus_button_default=0x7f02000b;
+        public static final int plus_button_pressed=0x7f02000c;
+        public static final int tab_bar_background_selected=0x7f02000d;
+        public static final int tab_bar_background_selected_pressed=0x7f02000e;
+        public static final int tab_bar_selector=0x7f02000f;
+        public static final int user_icon=0x7f020010;
     }
     public static final class id {
         public static final int action_delete=0x7f0a0028;
@@ -200,22 +201,24 @@ public final class R {
         /**  Application theme. 
          */
         public static final int AppTheme=0x7f080001;
+        public static final int AppTheme_ActionBar_Title=0x7f080003;
         /**  ActionBar Style 
          */
         public static final int MyActionBar=0x7f080002;
         /**  ActionBar Tabs Style 
          */
-        public static final int MyActionBarTabs=0x7f080003;
+        public static final int MyActionBarTabs=0x7f080004;
         /**  ActionBar Title Tabs Style 
          */
-        public static final int MyActionBarTabsText=0x7f080004;
-        public static final int ProductName=0x7f080007;
-        public static final int ProductSubname=0x7f080008;
-        public static final int ProductText=0x7f080006;
-        public static final int RoommatesGrid=0x7f08000a;
-        public static final int RoommatesSubtitleGrid=0x7f08000c;
-        public static final int RoommatesTitleGrid=0x7f08000b;
-        public static final int TaskName=0x7f080009;
-        public static final int TitleList=0x7f080005;
+        public static final int MyActionBarTabsText=0x7f080005;
+        public static final int ProductDate=0x7f08000a;
+        public static final int ProductName=0x7f080008;
+        public static final int ProductSubname=0x7f080009;
+        public static final int ProductText=0x7f080007;
+        public static final int RoommatesGrid=0x7f08000c;
+        public static final int RoommatesSubtitleGrid=0x7f08000e;
+        public static final int RoommatesTitleGrid=0x7f08000d;
+        public static final int TaskName=0x7f08000b;
+        public static final int TitleList=0x7f080006;
     }
 }

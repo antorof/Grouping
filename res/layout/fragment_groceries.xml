@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:scrollbars="none"
-		android:divider="@android:color/transparent"
-		android:dividerHeight="4.0sp"
-	    android:layout_marginRight="@dimen/list_lateral_margin" 
-	    android:layout_marginLeft="@dimen/list_lateral_margin" />
+		android:divider="@drawable/divider"
+		android:dividerHeight="2px"
+		android:headerDividersEnabled="false"
+		android:footerDividersEnabled="false" />
 </RelativeLayout>
