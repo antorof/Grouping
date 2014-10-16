@@ -46,7 +46,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 	
 	public static final String ARG_SECTION_NUMBER 	= "section_number";
 	public static final String ARG_SPECIAL_LIST 	= "special_list";
-	protected static final int ANIM_ROTATE_DURATION 	= 300;
+	protected static final int ANIM_ROTATE_DURATION = 300;
 	
 	/**
 	 * Callback para los cambios en la lista
@@ -412,6 +412,26 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 		values.put(Product.PRODUCT_SUBNAME, "Que sean Goldenas dsadsa dsad sadsa dsad sad sadsadsa dsad sadsadsadsa dsad sad sadsa dsadsa dsa dsad sad sadsad sad sadsa dsadsadsadsad sad sadsad sadsad sad sadsa ds!");
 		values.put(Product.PRODUCT_DAY, "2");
 		values.put(Product.PRODUCT_MONTH, "5");
+		values.put(Product.PRODUCT_PURCHASER_ID, 1);
+		values.put(Product.PRODUCT_URGENT, 1);
+		
+		db.insert(Tables.PRODUCTS, null, values);
+		values.clear();
+		
+		values.put(Product.PRODUCT_NAME, "Cacahuetes");
+		values.put(Product.PRODUCT_SUBNAME, "Que se sa dsadsa dsa dsad sad sadsad sad sadsa dsads adsads ad sad sadsad sadsad sad sadsa ds!");
+		values.put(Product.PRODUCT_DAY, "2");
+		values.put(Product.PRODUCT_MONTH, "5");
+		values.put(Product.PRODUCT_PURCHASER_ID, 3);
+		values.put(Product.PRODUCT_URGENT, 1);
+		
+		db.insert(Tables.PRODUCTS, null, values);
+		values.clear();
+		
+		values.put(Product.PRODUCT_NAME, "Ratoness");
+		values.put(Product.PRODUCT_SUBNAME, "Que sean Goldenas ds sad sadsa ds!");
+		values.put(Product.PRODUCT_DAY, "1");
+		values.put(Product.PRODUCT_MONTH, "12");
 		values.put(Product.PRODUCT_PURCHASER_ID, 1);
 		values.put(Product.PRODUCT_URGENT, 1);
 		

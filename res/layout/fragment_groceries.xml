@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:scrollbars="none"
 		android:divider="@drawable/divider"
-		android:dividerHeight="2px"
+		android:dividerHeight="1dp"
 		android:headerDividersEnabled="false"
 		android:footerDividersEnabled="false" />
 </RelativeLayout>
