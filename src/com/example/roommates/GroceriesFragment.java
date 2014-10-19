@@ -337,7 +337,6 @@ public class GroceriesFragment extends BaseFragment
 			
 			rowView.setTag(product.id);
 			
-			
 			TextView textName = (TextView) rowView.findViewById(R.id.product_name);
 			TextView textSubame = (TextView) rowView.findViewById(R.id.product_subname);
 			TextView textDate = (TextView) rowView.findViewById(R.id.product_date);
@@ -345,14 +344,17 @@ public class GroceriesFragment extends BaseFragment
 			ImageView iconSelected = (ImageView) rowView.findViewById(R.id.icon_purchaser_selected);
 			CheckBox checkbox = (CheckBox) rowView.findViewById(R.id.item_check_box);
 			
+			// Se comprueba si este item se encuentra entre los elementos checkeados
 			if(checkedList.get(position))
 			{
+				checkbox.setChecked(true);
 				icon.setVisibility(View.INVISIBLE);
 				iconSelected.setVisibility(View.VISIBLE);
 				rowView.setBackgroundColor(getResources().getColor(R.color.list_item_selected));
 			}
 			else
 			{
+				checkbox.setChecked(false);
 				icon.setVisibility(View.VISIBLE);
 				iconSelected.setVisibility(View.INVISIBLE);
 			    rowView.setBackgroundColor(getResources().getColor(R.color.backgroundListItem));

@@ -371,16 +371,6 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 	@Override
 	public void onDestroyActionMode(ActionMode mode) 
 	{
-		// Deselecciona todos los items, para ello es necsario realizar un click sobre cada item que esté 
-		// en la lista de seleccionados
-		int i=0;
-		while(i<checkedList.size())
-		{
-    		// La lista empieza en el id 1 porque tiene un header, por lo tanto es necesario un +1
-    		int position = checkedList.keyAt(i)+1;
-    		lista.performItemClick(lista.getChildAt(position), position, lista.getItemIdAtPosition(position));
-    	}
-		
 		checkedList.clear();
 		mActionMode = null;
 	}
