@@ -276,9 +276,10 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
     	while(i<size)
     	{
     		// La lista empieza en el id 1, por lo tanto es necesario un +1 
-    		View rowView = lista.getChildAt(checkedList.keyAt(i)+1);
+    		ModelProduct p = (ModelProduct) lista.getItemAtPosition(checkedList.keyAt(i)+1);
     		
-    		deleteItem(String.valueOf(rowView.getTag()));
+    		
+    		deleteItem(String.valueOf(p.id));
     		
     		eliminar.add((ModelProduct) lista.getItemAtPosition((checkedList.keyAt(i)+1)));
     		i++;
@@ -290,7 +291,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
     		deleteItemFromAdapter(p);
 
     	sortAndNotifyAdapter();
-    	createToastToggle(eliminar.size());
+    	createToastDelete(eliminar.size());
 	}
 	
 	/**
@@ -305,9 +306,10 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
     	while(i<size)
     	{
     		// La lista empieza en el id 1, por lo tanto es necesario un +1 
-    		View rowView = lista.getChildAt(checkedList.keyAt(i)+1);
+    		ModelProduct p = (ModelProduct) lista.getItemAtPosition(checkedList.keyAt(i)+1);
+    		
 
-    		toggleSpecialItem(String.valueOf(rowView.getTag()));
+    		toggleSpecialItem(String.valueOf(p.id));
     		
     		eliminar.add((ModelProduct) lista.getItemAtPosition((checkedList.keyAt(i)+1)));
     		i++;

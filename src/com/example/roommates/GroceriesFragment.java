@@ -194,12 +194,13 @@ public class GroceriesFragment extends BaseFragment
 		
     	while(i<size)
     	{
+    		lista.getChildCount();
     		// La lista empieza en el id 1, por lo tanto es necesario un +1 
-    		View rowView = lista.getChildAt(checkedList.keyAt(i)+1);
-
+    		ModelProduct p = (ModelProduct) lista.getItemAtPosition(checkedList.keyAt(i)+1);
+    		
     		cursorUser.moveToPosition(-1);
     		Cursor cursorProduct = db.query(Tables.PRODUCTS, GroceriesQuery.PROJECTION, 
-					Product._ID+"="+rowView.getTag(), null, null, null, null /*order*/);
+					Product._ID+"="+p.id, null, null, null, null /*order*/);
     			
     		if(cursorProduct.moveToFirst())
     		{
@@ -234,7 +235,7 @@ public class GroceriesFragment extends BaseFragment
 	    		values.put(Product.PRODUCT_MONTH, UIUtils.getMonth());
 	    		
 	    		db.update(Tables.PRODUCTS, values, Product._ID+"=?", 
-						new String[]{String.valueOf(rowView.getTag())});
+						new String[]{String.valueOf(p.id)});
 	    		values.clear();
 	    		
 	    		ModelProduct mp = (ModelProduct) lista.getItemAtPosition((checkedList.keyAt(i)+1));
@@ -335,12 +336,27 @@ public class GroceriesFragment extends BaseFragment
 			ModelProduct product = getItem(position);
 			
 			rowView.setTag(product.id);
-
+			
+			
 			TextView textName = (TextView) rowView.findViewById(R.id.product_name);
 			TextView textSubame = (TextView) rowView.findViewById(R.id.product_subname);
 			TextView textDate = (TextView) rowView.findViewById(R.id.product_date);
 			ImageView icon = (ImageView) rowView.findViewById(R.id.icon_purchaser);
+			ImageView iconSelected = (ImageView) rowView.findViewById(R.id.icon_purchaser_selected);
 			CheckBox checkbox = (CheckBox) rowView.findViewById(R.id.item_check_box);
+			
+			if(checkedList.get(position))
+			{
+				icon.setVisibility(View.INVISIBLE);
+				iconSelected.setVisibility(View.VISIBLE);
+				rowView.setBackgroundColor(getResources().getColor(R.color.list_item_selected));
+			}
+			else
+			{
+				icon.setVisibility(View.VISIBLE);
+				iconSelected.setVisibility(View.INVISIBLE);
+			    rowView.setBackgroundColor(getResources().getColor(R.color.backgroundListItem));
+			}
 			
 			textName.setText(product.name);
 			textSubame.setText(product.subname);
