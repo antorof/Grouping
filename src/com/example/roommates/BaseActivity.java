@@ -79,11 +79,11 @@ public abstract class BaseActivity extends Activity
     //(los indices deben corresponder con los de la lista superior)
     private static final int[] NAVDRAWER_ICON_RES_ID = new int[] {
             R.drawable.ic_drawer_launcher,  // Summary
-            R.drawable.ic_drawer_launcher,  // Groceries
+            R.drawable.ic_drawer_groceries,  // Groceries
             R.drawable.ic_drawer_launcher, // Tasks
             R.drawable.ic_drawer_launcher, // Bills
             R.drawable.ic_drawer_launcher, // Roommates
-            R.drawable.ic_drawer_launcher, // Settings
+            R.drawable.ic_drawer_settings, // Settings
     };
     
     // Delay para lanzar un item del navdrawer para permitir realizar la animación de cerrado

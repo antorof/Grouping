@@ -17,32 +17,35 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int background=0x7f050004;
-        public static final int backgroundListItem=0x7f050005;
-        public static final int body_text_1=0x7f050000;
-        public static final int green=0x7f050010;
-        public static final int list_item_pressed=0x7f050009;
-        public static final int list_item_selected=0x7f050007;
+        public static final int background=0x7f050007;
+        public static final int backgroundListItem=0x7f050008;
+        public static final int body_text_1=0x7f050003;
+        public static final int darker=0x7f050001;
+        public static final int green=0x7f050013;
+        public static final int lighter=0x7f050002;
+        public static final int list_item_pressed=0x7f05000c;
+        public static final int list_item_selected=0x7f05000a;
         /**  Navdrawer colors 
          */
-        public static final int navdrawer_background=0x7f05000a;
-        public static final int navdrawer_icon_tint=0x7f05000d;
-        public static final int navdrawer_icon_tint_selected=0x7f05000e;
-        public static final int navdrawer_text_color=0x7f05000b;
-        public static final int navdrawer_text_color_selected=0x7f05000c;
-        public static final int orange=0x7f050012;
-        public static final int primary_text=0x7f050002;
-        public static final int red=0x7f050011;
-        public static final int secondary_text=0x7f050003;
-        public static final int selector_tab_text=0x7f050013;
+        public static final int navdrawer_background=0x7f05000d;
+        public static final int navdrawer_icon_tint=0x7f050010;
+        public static final int navdrawer_icon_tint_selected=0x7f050011;
+        public static final int navdrawer_text_color=0x7f05000e;
+        public static final int navdrawer_text_color_selected=0x7f05000f;
+        public static final int orange=0x7f050015;
+        public static final int primary=0x7f050000;
+        public static final int primary_text=0x7f050005;
+        public static final int red=0x7f050014;
+        public static final int secondary_text=0x7f050006;
+        public static final int selector_tab_text=0x7f050016;
         /**  Color para Tab presionada sin seleccionar 
          */
-        public static final int tab_highlight=0x7f050008;
-        public static final int theme_primary=0x7f050001;
-        public static final int transparent=0x7f050006;
+        public static final int tab_highlight=0x7f05000b;
+        public static final int theme_primary=0x7f050004;
+        public static final int transparent=0x7f050009;
         /**  Colors users 
          */
-        public static final int turquesa=0x7f05000f;
+        public static final int turquesa=0x7f050012;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -62,18 +65,22 @@ public final class R {
         public static final int circle=0x7f020002;
         public static final int divider=0x7f020003;
         public static final int drawer_shadow=0x7f020004;
-        public static final int ic_drawer=0x7f020005;
-        public static final int ic_drawer_explore=0x7f020006;
-        public static final int ic_drawer_launcher=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int icon_selected=0x7f020009;
-        public static final int list_item_selector=0x7f02000a;
-        public static final int plus_button_default=0x7f02000b;
-        public static final int plus_button_pressed=0x7f02000c;
-        public static final int tab_bar_background_selected=0x7f02000d;
-        public static final int tab_bar_background_selected_pressed=0x7f02000e;
-        public static final int tab_bar_selector=0x7f02000f;
-        public static final int user_icon=0x7f020010;
+        public static final int ic_done_groceries=0x7f020005;
+        public static final int ic_drawer=0x7f020006;
+        public static final int ic_drawer_explore=0x7f020007;
+        public static final int ic_drawer_groceries=0x7f020008;
+        public static final int ic_drawer_launcher=0x7f020009;
+        public static final int ic_drawer_settings=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int ic_urgent=0x7f02000c;
+        public static final int ic_user=0x7f02000d;
+        public static final int icon_selected=0x7f02000e;
+        public static final int list_item_selector=0x7f02000f;
+        public static final int plus_button_default=0x7f020010;
+        public static final int plus_button_pressed=0x7f020011;
+        public static final int tab_bar_background_selected=0x7f020012;
+        public static final int tab_bar_background_selected_pressed=0x7f020013;
+        public static final int tab_bar_selector=0x7f020014;
     }
     public static final class id {
         public static final int action_delete=0x7f0a0028;

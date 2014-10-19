@@ -5,5 +5,5 @@
         android:color="#ffffff"/>
     <!--  Color TextTab Unselected -->
     <item android:state_selected="false"
-        android:color="#8D94BD"/>
+        android:color="@color/lighter"/>
 </selector>

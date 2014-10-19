@@ -20,7 +20,7 @@
         android:scaleType="fitXY"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/user_icon"
+        android:src="@drawable/ic_user"
         android:background="@android:color/transparent"
         android:contentDescription="@string/add_button_description" />
     

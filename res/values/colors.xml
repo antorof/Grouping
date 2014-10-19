@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
+    <color name="primary">#8bc34a</color>
+    <color name="darker">#7cb342</color>
+    <color name="lighter">#dcedc8</color>
+    
     <color name="body_text_1">#de000000</color>
     
-    <color name="theme_primary">#3f51b5</color>
+    <color name="theme_primary">@color/primary</color>
     
     <color name="primary_text">#000000</color>
     <color name="secondary_text">#DBDBDB</color>
@@ -16,7 +20,7 @@
     <color name="list_item_selected">#c2d1d7</color>
     
     <!-- Color para Tab presionada sin seleccionar -->
-    <color name="tab_highlight">#6673BA</color>
+    <color name="tab_highlight">@color/darker</color>
     <color name="list_item_pressed">#F2F2F2</color>
 	
     <!-- Navdrawer colors -->

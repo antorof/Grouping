@@ -29,6 +29,8 @@
         <item name="android:background">@color/theme_primary</item>
     </style>
     
+    
+    
     <style name="AppTheme_ActionBar_Title" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
 		<item name="android:textColor">@android:color/white</item>
 		<item name="android:textSize">20sp</item>
