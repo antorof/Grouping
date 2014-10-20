@@ -344,14 +344,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 		if(mActionMode != null)
 		{
 			mActionMode.finish();
-			mHandler.postAtFrontOfQueue(new Runnable()
-		    {
-		        @Override
-		        public void run() 
-		        {
-		        	sortAndNotifyAdapter();
-		        }
-		    });
+			lista.invalidateViews();
 		}
 	}
 	
