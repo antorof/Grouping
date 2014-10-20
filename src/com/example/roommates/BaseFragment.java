@@ -278,7 +278,6 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
     		// La lista empieza en el id 1, por lo tanto es necesario un +1 
     		ModelProduct p = (ModelProduct) lista.getItemAtPosition(checkedList.keyAt(i)+1);
     		
-    		
     		deleteItem(String.valueOf(p.id));
     		
     		eliminar.add((ModelProduct) lista.getItemAtPosition((checkedList.keyAt(i)+1)));
@@ -343,7 +342,17 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 	public void closeContextualMode()
 	{
 		if(mActionMode != null)
+		{
 			mActionMode.finish();
+			mHandler.postAtFrontOfQueue(new Runnable()
+		    {
+		        @Override
+		        public void run() 
+		        {
+		        	sortAndNotifyAdapter();
+		        }
+		    });
+		}
 	}
 	
 	@Override
