@@ -44,7 +44,8 @@
     
     <!-- New Activity -->
     
-    <string name="new_roommate">New roommate</string>
-    <string name="new_grocery">New grocery</string>
+    <string name="new_title_card">What will you create?</string>
+    <string name="new_roommate">Roommate</string>
+    <string name="new_grocery">Grocery</string>
     
 </resources>

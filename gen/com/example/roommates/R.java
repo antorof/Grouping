@@ -13,6 +13,8 @@ public final class R {
         public static final int fade_out=0x7f040001;
         public static final int rotate_item_in=0x7f040002;
         public static final int rotate_item_out=0x7f040003;
+        public static final int slide_in_left=0x7f040004;
+        public static final int slide_out_right=0x7f040005;
     }
     public static final class attr {
     }
@@ -87,51 +89,55 @@ public final class R {
         public static final int tab_bar_selector=0x7f020018;
     }
     public static final class id {
-        public static final int action_delete=0x7f0a002e;
-        public static final int action_purchased=0x7f0a002c;
-        public static final int action_settings=0x7f0a002b;
-        public static final int action_urgent=0x7f0a002d;
+        public static final int action_delete=0x7f0a0032;
+        public static final int action_purchased=0x7f0a0030;
+        public static final int action_settings=0x7f0a002f;
+        public static final int action_urgent=0x7f0a0031;
         public static final int add_button=0x7f0a0005;
-        public static final int botonImagen=0x7f0a0012;
+        public static final int botonImagen=0x7f0a0016;
+        public static final int card_list=0x7f0a0008;
+        public static final int card_list2=0x7f0a000a;
         public static final int container=0x7f0a0003;
         public static final int drawer_layout=0x7f0a0000;
-        public static final int icon=0x7f0a0029;
-        public static final int icon_purchaser=0x7f0a000b;
-        public static final int icon_purchaser_selected=0x7f0a000c;
-        public static final int item_check_box=0x7f0a000a;
+        public static final int icon=0x7f0a002d;
+        public static final int icon_purchaser=0x7f0a000f;
+        public static final int icon_purchaser_selected=0x7f0a0010;
+        public static final int item_check_box=0x7f0a000e;
         public static final int list_groceries=0x7f0a0007;
-        public static final int list_new=0x7f0a0008;
-        public static final int list_roommates=0x7f0a0009;
-        public static final int navdrawer=0x7f0a0028;
-        public static final int new_icon=0x7f0a0010;
-        public static final int new_info=0x7f0a0013;
-        public static final int new_name=0x7f0a0011;
+        public static final int list_new=0x7f0a0009;
+        public static final int list_roommates=0x7f0a000d;
+        public static final int navdrawer=0x7f0a002c;
+        public static final int new_icon=0x7f0a0014;
+        public static final int new_info=0x7f0a0017;
+        public static final int new_name=0x7f0a0015;
         public static final int pager_title_strip=0x7f0a0002;
-        public static final int product_date=0x7f0a000f;
-        public static final int product_name=0x7f0a000d;
-        public static final int product_subname=0x7f0a000e;
+        public static final int product_date=0x7f0a0013;
+        public static final int product_name=0x7f0a0011;
+        public static final int product_subname=0x7f0a0012;
+        public static final int prueba=0x7f0a000b;
+        public static final int prueba2=0x7f0a000c;
         public static final int root_container=0x7f0a0004;
-        public static final int task_check_box=0x7f0a001f;
-        public static final int task_date_sub1=0x7f0a0025;
-        public static final int task_date_sub2=0x7f0a0027;
-        public static final int task_date_title1=0x7f0a0024;
-        public static final int task_date_title2=0x7f0a0026;
-        public static final int task_name=0x7f0a0022;
-        public static final int task_purchaser=0x7f0a0020;
-        public static final int task_purchaser_selected=0x7f0a0021;
-        public static final int task_subname=0x7f0a0023;
-        public static final int title=0x7f0a002a;
-        public static final int user_check_box=0x7f0a0014;
-        public static final int user_icon=0x7f0a0015;
-        public static final int user_icon_selected=0x7f0a0016;
-        public static final int user_layout_titles=0x7f0a0018;
-        public static final int user_name=0x7f0a0017;
-        public static final int user_subtitle_bills=0x7f0a001e;
-        public static final int user_subtitle_groceries=0x7f0a001c;
-        public static final int user_subtitle_tasks=0x7f0a001d;
-        public static final int user_title_bills=0x7f0a001b;
-        public static final int user_title_groceries=0x7f0a0019;
-        public static final int user_title_tasks=0x7f0a001a;
+        public static final int task_check_box=0x7f0a0023;
+        public static final int task_date_sub1=0x7f0a0029;
+        public static final int task_date_sub2=0x7f0a002b;
+        public static final int task_date_title1=0x7f0a0028;
+        public static final int task_date_title2=0x7f0a002a;
+        public static final int task_name=0x7f0a0026;
+        public static final int task_purchaser=0x7f0a0024;
+        public static final int task_purchaser_selected=0x7f0a0025;
+        public static final int task_subname=0x7f0a0027;
+        public static final int title=0x7f0a002e;
+        public static final int user_check_box=0x7f0a0018;
+        public static final int user_icon=0x7f0a0019;
+        public static final int user_icon_selected=0x7f0a001a;
+        public static final int user_layout_titles=0x7f0a001c;
+        public static final int user_name=0x7f0a001b;
+        public static final int user_subtitle_bills=0x7f0a0022;
+        public static final int user_subtitle_groceries=0x7f0a0020;
+        public static final int user_subtitle_tasks=0x7f0a0021;
+        public static final int user_title_bills=0x7f0a001f;
+        public static final int user_title_groceries=0x7f0a001d;
+        public static final int user_title_tasks=0x7f0a001e;
         public static final int view=0x7f0a0006;
         public static final int viewpager=0x7f0a0001;
     }
@@ -183,10 +189,11 @@ public final class R {
         public static final int navdrawer_item_settings=0x7f07000c;
         public static final int navdrawer_item_summary=0x7f070007;
         public static final int navdrawer_item_tasks=0x7f070009;
-        public static final int new_grocery=0x7f07001c;
+        public static final int new_grocery=0x7f07001d;
+        public static final int new_roommate=0x7f07001c;
         /**  New Activity 
          */
-        public static final int new_roommate=0x7f07001b;
+        public static final int new_title_card=0x7f07001b;
         public static final int normal_list=0x7f070011;
         public static final int tasks_title=0x7f070019;
         public static final int toast_added_urgent=0x7f070013;

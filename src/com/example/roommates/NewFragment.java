@@ -5,9 +5,14 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -17,10 +22,19 @@ import com.example.roommates.Utils.UIUtils;
 
 public class NewFragment extends Fragment 
 {
-	ListView lista;
-	String[] values;
+	private Handler mHandler;
 	
-	NewAdapter mAdapter = null;
+	private View mView;
+	
+	private ListView lista;
+	private View cardSelectKind;
+	private View cardSelected;
+	
+	private String[] values;
+	
+	private NewAdapter mAdapter = null;
+	
+	private static int ANIM_DISAPPEAR = 1000;
 	
    
 	@Override
@@ -38,7 +52,11 @@ public class NewFragment extends Fragment
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) 
 	{
+		mView = view;
+		mHandler = new Handler();
+		
 		lista = (ListView) view.findViewById(R.id.list_new);
+		cardSelectKind = (View) view.findViewById(R.id.card_list);
 		
 		UIUtils.addHeaderFooterDivider(lista, getActivity());
 		values= new String[] { getString(R.string.new_roommate), getString(R.string.new_grocery)};
@@ -46,6 +64,41 @@ public class NewFragment extends Fragment
 		mAdapter = new NewAdapter(getActivity(), values);
 		
 		lista.setAdapter(mAdapter);
+		
+		lista.setOnItemClickListener(new OnItemClickListener() 
+		{
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+			{
+				String tag = (String) view.getTag();
+				if(tag.equals(getActivity().getString(R.string.new_roommate)))
+				{
+					cardSelected = (View) mView.findViewById(R.id.card_list2);
+				}else if(tag.equals(getActivity().getString(R.string.new_grocery)))
+				{
+					cardSelected = (View) mView.findViewById(R.id.card_list2);
+				}
+				
+				Animation dissapear = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_out_right);
+				Animation appear = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_in_left);
+		        
+				dissapear.setDuration(ANIM_DISAPPEAR);
+				appear.setDuration(ANIM_DISAPPEAR);
+		        
+				cardSelectKind.startAnimation(dissapear);
+				cardSelected.startAnimation(appear);
+				cardSelected.setVisibility(View.VISIBLE);
+				
+				mHandler.postDelayed(new Runnable()
+				{
+					@Override
+				    public void run() 
+					{
+						cardSelectKind.setVisibility(View.INVISIBLE);
+				    }
+				}, ANIM_DISAPPEAR);
+			}
+		});
 	}
 	
 	public class NewAdapter extends ArrayAdapter<String>
@@ -101,6 +154,8 @@ public class NewFragment extends Fragment
 
 			// Se obtiene el valor de la lista para la posición actual
 			String s = valores[position];
+
+			rowView.setTag(s);
 		    
 			if (s.equals( context.getString(R.string.new_roommate)) ) 	// Si es el modo "Nueva Canción" se añade la imagen R.drawable.plus
 			{
@@ -126,7 +181,7 @@ public class NewFragment extends Fragment
                      	builder.setPositiveButton("aceptar", new DialogInterface.OnClickListener() {
                      		public void onClick(DialogInterface dialog, int id) 
                      		{
-                     		
+                     			
                 	        }
                      	});
 

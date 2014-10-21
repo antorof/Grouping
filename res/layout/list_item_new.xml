@@ -36,12 +36,13 @@
 		    android:layout_height="wrap_content"
 		    android:layout_alignParentTop="true"
 		    android:layout_alignParentRight="true"
-		    android:padding="8dp" >
+		    android:paddingLeft="8dp"
+		    android:paddingTop="20dp" >
 		    
 		    <ImageView
 		        android:id="@+id/new_info"
-		        android:layout_width="40dp"
-		        android:layout_height="40dp"
+		        android:layout_width="20dp"
+		        android:layout_height="20dp"
 		        android:scaleType="fitXY"
 		        android:layout_marginRight="8dp"
 		        android:src="@drawable/ic_info"
