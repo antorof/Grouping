@@ -42,4 +42,9 @@
     <string name="tasks_title">Tasks</string>
     <string name="bills_title">Bills</string>
     
+    <!-- New Activity -->
+    
+    <string name="new_roommate">New roommate</string>
+    <string name="new_grocery">New grocery</string>
+    
 </resources>

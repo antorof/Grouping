@@ -141,7 +141,7 @@ public abstract class BaseActivity extends Activity
     public boolean onOptionsItemSelected(MenuItem item) {
     	// Se delega el evento al ActionBarDrawerToggle, si devuelve
     	// true se ha maejado el evento sobre el icono de la app
-        if (mDrawerToggle.onOptionsItemSelected(item))
+        if (mDrawerToggle != null && mDrawerToggle.onOptionsItemSelected(item))
           return true;
         
         // Manejar el resto de acciones sobre los items de la actionbar

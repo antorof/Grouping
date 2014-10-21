@@ -42,6 +42,12 @@
             android:name="com.example.roommates.RoommatesActivity"
             android:label="@string/navdrawer_item_roommates"
 		/>
+        
+        <!-- New directory -->
+        <activity
+            android:name="com.example.roommates.NewActivity"
+            android:label="@string/navdrawer_item_roommates"
+		/>
     </application>
 
 </manifest>

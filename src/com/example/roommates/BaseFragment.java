@@ -7,6 +7,7 @@ import models.ModelProduct;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -114,6 +115,8 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
             @Override
             public void onClick(View view) 
             {
+            	Intent intent = new Intent(getActivity(), NewActivity.class);
+	            startActivity(intent);
             }
         });
 	}
