@@ -91,15 +91,18 @@ public class GroceriesFragment extends BaseFragment
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
 			{
-				final ImageView productPurchaserIcon = (ImageView) view.findViewById(R.id.icon_purchaser);
-				final ImageView selectedIcon = (ImageView) view.findViewById(R.id.icon_purchaser_selected);
-				CheckBox checkBox = (CheckBox) view.findViewById(R.id.item_check_box);
-
-				// Cambiamos el estado del checkbox. Dependiendo del nuevo estado se
-				// modifica el diseño del item para que el usuario conozca el estado
-				checkBox.toggle();
-				
-				animateIcons(productPurchaserIcon, selectedIcon, checkBox.isChecked(), view);
+				if(view != null)
+				{
+					final ImageView productPurchaserIcon = (ImageView) view.findViewById(R.id.icon_purchaser);
+					final ImageView selectedIcon = (ImageView) view.findViewById(R.id.icon_purchaser_selected);
+					CheckBox checkBox = (CheckBox) view.findViewById(R.id.item_check_box);
+	
+					// Cambiamos el estado del checkbox. Dependiendo del nuevo estado se
+					// modifica el diseño del item para que el usuario conozca el estado
+					checkBox.toggle();
+					
+					animateIcons(productPurchaserIcon, selectedIcon, checkBox.isChecked(), view);
+				}
 			}
 		});
 	}
@@ -335,7 +338,7 @@ public class GroceriesFragment extends BaseFragment
 
 			ModelProduct product = getItem(position);
 			
-			rowView.setTag(product.id);
+			rowView.setTag(position);
 			
 			TextView textName = (TextView) rowView.findViewById(R.id.product_name);
 			TextView textSubame = (TextView) rowView.findViewById(R.id.product_subname);

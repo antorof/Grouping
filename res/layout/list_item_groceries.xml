@@ -22,7 +22,7 @@
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_user"
         android:background="@android:color/transparent"
-        android:contentDescription="@string/add_button_description" />
+        android:contentDescription="@string/user_icon_description" />
     
 	<ImageView
         android:id="@+id/icon_purchaser_selected"
@@ -45,7 +45,7 @@
         android:layout_toRightOf="@id/icon_purchaser"
         android:singleLine="true"
         android:ellipsize="end"
-        style="@style/ProductName"/>
+        style="@style/PrimaryTextItemDoubleLine"/>
        
 	<TextView 
         android:id="@+id/product_subname"
@@ -55,7 +55,7 @@
         android:layout_below="@id/product_name"
         android:singleLine="true"
         android:ellipsize="end"
-       	style="@style/ProductSubname"/>
+       	style="@style/SecondaryTextItemDoubleLine"/>
 		
 	<TextView 
         android:id="@+id/product_date"
@@ -63,6 +63,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-       	style="@style/ProductDate"/>
+       	style="@style/ExtraTextItemDoubleLine"/>
     
 </RelativeLayout>

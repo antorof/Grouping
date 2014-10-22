@@ -54,37 +54,30 @@
        	<item name="android:paddingTop">10dp</item>
    	</style>
    
-   	<style name="ProductText" parent="@android:style/TextAppearance">
+   	<style name="TextItemDoubleLine" parent="@android:style/TextAppearance">
        	<item name="android:paddingLeft">16dp</item>
    	</style>
    
-	<style name="ProductName" parent="ProductText">
+	<style name="PrimaryTextItemDoubleLine" parent="TextItemDoubleLine">
 	    <item name="android:alpha">0.87</item>
        	<item name="android:paddingRight">60dp</item>
        	<item name="android:paddingTop">16dp</item>
        	<item name="android:textSize">16sp</item>
    	</style>
    
-	<style name="ProductSubname" parent="ProductText">
+	<style name="SecondaryTextItemDoubleLine" parent="TextItemDoubleLine">
 	    <item name="android:alpha">0.54</item>
        	<item name="android:paddingRight">16dp</item>
        	<item name="android:textSize">14sp</item>
    	</style>
    	
-	<style name="ProductDate" parent="ProductText">
+	<style name="ExtraTextItemDoubleLine" parent="TextItemDoubleLine">
 	    <item name="android:alpha">0.54</item>
        	<item name="android:paddingRight">16dp</item>
-       	<item name="android:paddingTop">16dp</item>
+       	<item name="android:paddingTop">14dp</item>
        	<item name="android:textSize">12sp</item>
    	</style>
-	
-	<style name="TaskName" parent="ProductText">
-       	<item name="android:textColor">@color/primary_text</item>
-       	<item name="android:paddingRight">100dp</item>
-       	<item name="android:paddingTop">5dp</item>
-       	<item name="android:textSize">20sp</item>
-   	</style>
-	
+
 	<style name="RoommatesGrid" parent="@android:style/TextAppearance">
        	<item name="android:gravity">center</item>
 	</style>

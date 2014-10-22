@@ -45,7 +45,7 @@
         android:layout_toRightOf="@id/task_purchaser"
         android:singleLine="true"
         android:ellipsize="end"
-        style="@style/TaskName"/>
+        style="@style/PrimaryTextItemDoubleLine"/>
        
 	<TextView 
         android:id="@+id/task_subname"
@@ -53,9 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/task_purchaser"
         android:layout_below="@id/task_name"
-        android:maxLines="2"
         android:ellipsize="end"
-        style="@style/ProductSubname"/>
+        style="@style/SecondaryTextItemDoubleLine"/>
 		
 	<TextView 
         android:id="@+id/task_date_title1"

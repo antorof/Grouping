@@ -71,7 +71,7 @@
 	        </TextView>
 	        
 	        <ListView
-		        android:id="@+id/list_new"
+		        android:id="@+id/list_new2"
 		        android:layout_width="wrap_content"
 		    	android:layout_height="wrap_content"
 		        android:scrollbars="none"

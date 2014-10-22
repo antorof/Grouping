@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -117,6 +118,8 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
             {
             	Intent intent = new Intent(getActivity(), NewActivity.class);
 	            startActivity(intent);
+	            
+	            getActivity().overridePendingTransition(R.anim.slide_in_activity, R.anim.slide_out_activity);
             }
         });
 	}
@@ -347,7 +350,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 		if(mActionMode != null)
 		{
 			mActionMode.finish();
-			lista.invalidateViews();
+			//lista.invalidateViews();
 		}
 	}
 	
@@ -376,6 +379,33 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 	@Override
 	public void onDestroyActionMode(ActionMode mode) 
 	{
+		// Creamos una lista con los items de la checkedList ya que al 
+		// realizar posteriormente cada "click virtual" eliminará un
+		// elemento de esta lista.
+		int size = checkedList.size();
+		int[] listaP = new int[size];
+		for(int i=0; i<size; i++)
+			listaP[i] = checkedList.keyAt(i);
+		
+		for(int i=0; i<size; i++)
+		{
+			int posicionBuscada = listaP[i]; // Posición que estamos buscando
+			// Primera posición de los items mostrados en pantalla (child #0)
+			int firstPosition = lista.getFirstVisiblePosition() - lista.getHeaderViewsCount(); 
+			// El child buscando dentro del ViewGroup (siendo #0 el primero visible)
+			int childBuscado = posicionBuscada - firstPosition; 
+			if (childBuscado < 0 || childBuscado >= lista.getChildCount()) 
+			{
+			  Log.v("MENSAJE", "Imposible acceder al elemento, no se encuentra visible en pantalla");
+			}
+			else
+			{
+				View wantedView = lista.getChildAt(childBuscado);
+				lista.performItemClick(wantedView, posicionBuscada, wantedView.getId());
+			}
+		}
+		
+		Log.v("MENSAJE", "HOLA");
 		checkedList.clear();
 		mActionMode = null;
 	}
@@ -406,6 +436,30 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 		values.clear();
 
 		values.put(Product.PRODUCT_NAME, "Caca dsad sasadsa dsasad sads");
+		values.put(Product.PRODUCT_SUBNAME, "Que sean Goldenas dsadsa dsad sadsa dsad sad sadsadsa dsad sadsadsadsa dsad sad sadsa dsadsa dsa dsad sad sadsad sad sadsa dsadsadsadsad sad sadsad sadsad sad sadsa ds!");
+		values.put(Product.PRODUCT_DAY, "2");
+		values.put(Product.PRODUCT_MONTH, "5");
+		values.put(Product.PRODUCT_PURCHASER_ID, 1);
+		values.put(Product.PRODUCT_URGENT, 1);
+		
+		db.insert(Tables.PRODUCTS, null, values);
+		values.clear();values.put(Product.PRODUCT_NAME, "Caca dsad sasadsa dsasad sads");
+		values.put(Product.PRODUCT_SUBNAME, "Que sean Goldenas dsadsa dsad sadsa dsad sad sadsadsa dsad sadsadsadsa dsad sad sadsa dsadsa dsa dsad sad sadsad sad sadsa dsadsadsadsad sad sadsad sadsad sad sadsa ds!");
+		values.put(Product.PRODUCT_DAY, "2");
+		values.put(Product.PRODUCT_MONTH, "5");
+		values.put(Product.PRODUCT_PURCHASER_ID, 1);
+		values.put(Product.PRODUCT_URGENT, 1);
+		
+		db.insert(Tables.PRODUCTS, null, values);
+		values.clear();values.put(Product.PRODUCT_NAME, "Caca dsad sasadsa dsasad sads");
+		values.put(Product.PRODUCT_SUBNAME, "Que sean Goldenas dsadsa dsad sadsa dsad sad sadsadsa dsad sadsadsadsa dsad sad sadsa dsadsa dsa dsad sad sadsad sad sadsa dsadsadsadsad sad sadsad sadsad sad sadsa ds!");
+		values.put(Product.PRODUCT_DAY, "2");
+		values.put(Product.PRODUCT_MONTH, "5");
+		values.put(Product.PRODUCT_PURCHASER_ID, 1);
+		values.put(Product.PRODUCT_URGENT, 1);
+		
+		db.insert(Tables.PRODUCTS, null, values);
+		values.clear();values.put(Product.PRODUCT_NAME, "Caca dsad sasadsa dsasad sads");
 		values.put(Product.PRODUCT_SUBNAME, "Que sean Goldenas dsadsa dsad sadsa dsad sad sadsadsa dsad sadsadsadsa dsad sad sadsa dsadsa dsa dsad sad sadsad sad sadsa dsadsadsadsad sad sadsad sadsad sad sadsa ds!");
 		values.put(Product.PRODUCT_DAY, "2");
 		values.put(Product.PRODUCT_MONTH, "5");
