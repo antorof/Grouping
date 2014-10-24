@@ -1,0 +1,46 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cojisoft.roommates">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/plus_button_default"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Groceries directory -->
+        <activity
+            android:name="com.cojisoft.roommates.GroceriesActivity"
+            android:label="@string/navdrawer_item_groceries" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Bills directory -->
+        <activity
+            android:name="com.cojisoft.roommates.BillsActivity"
+            android:label="@string/navdrawer_item_bills"
+            />
+
+        <!-- Task directory -->
+        <activity
+            android:name="com.cojisoft.roommates.TasksActivity"
+            android:label="@string/navdrawer_item_tasks"
+            />
+
+        <!-- Roommates directory -->
+        <activity
+            android:name="com.cojisoft.roommates.RoommatesActivity"
+            android:label="@string/navdrawer_item_roommates"
+            />
+
+        <!-- New directory -->
+        <activity
+            android:name="com.cojisoft.roommates.NewActivity"
+            android:label="@string/navdrawer_item_roommates"
+            />
+    </application>
+
+</manifest>

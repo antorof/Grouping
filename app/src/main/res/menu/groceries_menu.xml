@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_purchased"
+        android:icon="@drawable/ic_done_groceries"
+        android:title="@string/action_purchased"
+        android:showAsAction="ifRoom" />
+    
+    <item
+        android:id="@+id/action_urgent"
+        android:icon="@drawable/ic_urgent"
+        android:title="@string/action_urgent"
+        android:showAsAction="ifRoom" />
+    
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/action_delete"
+        android:showAsAction="never" />
+    
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+
+</menu>

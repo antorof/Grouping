@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="primary">#009688</color>
+    <color name="darker">#00796b</color>
+    <color name="lighter">#b2dfdb</color>
+    
+    <color name="body_text_1">#de000000</color>
+    
+    <color name="theme_primary">@color/primary</color>
+    
+    <color name="primary_text">#000000</color>
+    <color name="secondary_text">#DBDBDB</color>
+    
+	<color name="background">#FFFFFF</color>
+	<color name="backgroundListItem">#FFFFFF</color>
+	
+    <color name="transparent">#00000000</color>
+    
+    <color name="list_item_selected">#c2d1d7</color>
+    
+    <!-- Color para Tab presionada sin seleccionar -->
+    <color name="tab_highlight">@color/darker</color>
+    <color name="list_item_pressed">#F2F2F2</color>
+	
+    <!-- Navdrawer colors -->
+    <color name="navdrawer_background">#ffffffff</color>
+    <color name="navdrawer_text_color">@color/body_text_1</color>
+    <color name="navdrawer_text_color_selected">@color/theme_primary</color>
+    <color name="navdrawer_icon_tint">#808080</color>
+    <color name="navdrawer_icon_tint_selected">@color/theme_primary</color>
+    
+    <!-- Colors users -->
+    <color name="turquesa">#6bb5c8</color>
+    <color name="green">#80b565</color>
+    <color name="red">#ff828b</color>
+    <color name="orange">#ffc571</color>
+</resources>
