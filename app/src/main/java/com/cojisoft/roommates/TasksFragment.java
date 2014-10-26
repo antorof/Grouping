@@ -1,12 +1,13 @@
 package com.cojisoft.roommates;
 
-import com.cojisoft.models.ModelBase;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.view.ActionMode;
+import android.support.v7.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+
+import com.cojisoft.models.ModelBase;
 
 public class TasksFragment extends BaseFragment
 {

@@ -2,34 +2,40 @@
 <pre-dex-items>
 
     <item
-        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\classes-9e766ffbdac3cb3107f0ab26fbe0f8149182f60c.jar"
-        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\classes.jar"
+        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\classes-b8fc40c859a70ad072e87c9dedab6d86218942d6.jar"
+        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="e128103d5281ddd26195a7f980b36d0d005a4e56"/>
+        revision="21.0.2"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
     <item
-        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-d2674830335fea052bc883f054641b9d9e04b212.jar"
-        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\classes-86ce3ea8bf9c9cc80cafba1cfa5129600b63ada2.jar"
+        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.0\classes.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+        revision="21.0.2"
+        sha1="0c0c19759e5868604a3b4c2c0074ee9404d73c76"/>
     <item
-        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-a066e55c8b74a93d25612c529aac220347da05b4.jar"
-        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\libs\internal_impl-20.0.0.jar"
+        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-28790483d2ee74cf415ec7ac9c2d84b15a0704b0.jar"
+        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.0\libs\internal_impl-21.0.0.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
+        revision="21.0.2"
+        sha1="5a8e01742aee890c56fe638ea7c921b91a3fdc62"/>
     <item
-        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-74afb3b114767e33a102a0e519c8ef6eb7e8b935.jar"
-        jar="C:\Users\DavidGSola\AppData\Local\Android\android-studio1\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-5cf672091d012f9fcac03338b6753eb58f48caea.jar"
+        jar="C:\Users\DavidGSola\AppData\Local\Android\android-studio1\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+        revision="21.0.2"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
     <item
-        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\classes-94509a9b97ca3b3697915bd839133b18aea268ba.jar"
-        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-ebbd9c464166f22ed6cd345d265887462a6606a6.jar"
+        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
         jumboMode="false"
-        revision="20.0.0"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+        revision="21.0.2"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+    <item
+        dex="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\pre-dexed\debug\classes-2ba4c651fc5eb687fe5e375e4c3f3f5944404c69.jar"
+        jar="C:\Users\DavidGSola\AndroidStudioProjects\Roommates\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
 
 </pre-dex-items>

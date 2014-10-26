@@ -1,15 +1,12 @@
 package com.cojisoft.roommates;
 
-import java.util.ArrayList;
-
-import com.cojisoft.models.ModelBase;
-import com.cojisoft.models.ModelProduct;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.ActionMode;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,11 +23,14 @@ import android.widget.TextView;
 
 import com.cojisoft.Utils.SortByDate;
 import com.cojisoft.Utils.UIUtils;
-
 import com.cojisoft.database.ScheduleContract.Product;
 import com.cojisoft.database.ScheduleContract.User;
 import com.cojisoft.database.ScheduleDatabase;
 import com.cojisoft.database.ScheduleDatabase.Tables;
+import com.cojisoft.models.ModelBase;
+import com.cojisoft.models.ModelProduct;
+
+import java.util.ArrayList;
 
 
 /**
@@ -365,21 +365,25 @@ public class BillsFragment extends BaseFragment
 			{
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView,
-						boolean isChecked) 
-				{
-					// Si ya existe lo eliminamos pues lo estamos deseleccionando
-					// Si no lo añadimos ya que estamos seleccionandolo
-					if(checkedList.get(position))
-						checkedList.delete(position);
-					else
-						checkedList.append(position, true);
-					
-					// Si se han deseleccionado todos los items se finaliza la barra de acción contextual
-					if(checkedList.size() == 0 && mActionMode != null)
-						mActionMode.finish();
-					else if(mActionMode == null) // Si no ha sido inicializa aún se inicia la barra de acción
-						mActionMode = getActivity().startActionMode(BillsFragment.this);
-				}
+						boolean isChecked) {
+                    // Si ya existe lo eliminamos pues lo estamos deseleccionando
+                    // Si no lo añadimos ya que estamos seleccionandolo
+                    if (checkedList.get(position))
+                        checkedList.delete(position);
+                    else
+                        checkedList.append(position, true);
+
+                    // Si se han deseleccionado todos los items se finaliza la barra de acción contextual
+                    if (checkedList.size() == 0 && mActionMode != null)
+                        mActionMode.finish();
+                    else if (mActionMode == null) // Si no ha sido inicializa aún se inicia la barra de acción
+                    {
+                        //	mActionMode = getActivity().startActionMode(BillsFragment.this);
+
+                        ActionBarActivity b = (ActionBarActivity)getActivity();
+                        mActionMode =  b.getSupportActionBar().startActionMode(BillsFragment.this);
+                    }
+                }
 			});
 			
 			return rowView;

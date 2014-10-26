@@ -1,15 +1,12 @@
 package com.cojisoft.roommates;
 
-import java.util.ArrayList;
-
-import com.cojisoft.models.ModelBase;
-import com.cojisoft.models.ModelProduct;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.ActionMode;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,12 +23,14 @@ import android.widget.TextView;
 
 import com.cojisoft.Utils.SortByDate;
 import com.cojisoft.Utils.UIUtils;
-
 import com.cojisoft.database.ScheduleContract.Product;
 import com.cojisoft.database.ScheduleContract.User;
 import com.cojisoft.database.ScheduleDatabase;
 import com.cojisoft.database.ScheduleDatabase.Tables;
+import com.cojisoft.models.ModelBase;
+import com.cojisoft.models.ModelProduct;
 
+import java.util.ArrayList;
 
 /**
  * Fragmento con una lista de productos. Permite la multiselección de los diferentes items
@@ -305,7 +304,7 @@ public class GroceriesFragment extends BaseFragment
 	}
 
 	@Override
-	public boolean onCreateActionMode(ActionMode mode, Menu menu) 
+	public boolean onCreateActionMode(ActionMode mode, Menu menu)
 	{
 		MenuInflater inflater = mode.getMenuInflater();
 		inflater.inflate(R.menu.groceries_menu, menu);
@@ -400,9 +399,15 @@ public class GroceriesFragment extends BaseFragment
 					if(checkedList.size() == 0 && mActionMode != null)
 						mActionMode.finish();
 					else if(mActionMode == null) // Si no ha sido inicializa aún se inicia la barra de acción
-						mActionMode = getActivity().startActionMode(GroceriesFragment.this);
+                    {
+                        //	mActionMode = getActivity().startActionMode(GroceriesFragment.this);
+
+                        ActionBarActivity b = (ActionBarActivity)getActivity();
+                        mActionMode =  b.getSupportActionBar().startActionMode(GroceriesFragment.this);
+                    }
 				}
 			});
+
 			
 			return rowView;
 		}

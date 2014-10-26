@@ -17,5 +17,11 @@ public class NewActivity extends BaseSimpleActivity {
         // TODO: make this Activity navigate up to the right screen depending on how it was launched
         return new Intent(this, RoommatesActivity.class);
     }
+
+    @Override
+    protected int getLayoutResource()
+    {
+        return R.layout.activity_prueba_activity;
+    }
 	
 }

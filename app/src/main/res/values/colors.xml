@@ -4,7 +4,8 @@
     <color name="primary">#009688</color>
     <color name="darker">#00796b</color>
     <color name="lighter">#b2dfdb</color>
-    
+    <color name="navdrawer_shadow_color">#40000000</color>
+
     <color name="body_text_1">#de000000</color>
     
     <color name="theme_primary">@color/primary</color>

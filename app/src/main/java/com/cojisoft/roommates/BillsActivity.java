@@ -139,4 +139,10 @@ public class BillsActivity extends BaseActivity implements ActionBar.TabListener
 			if(fragments[i] != fragment)
 				fragments[i].addItemAdapter(product);
 	}
+
+    @Override
+    protected int getLayoutResource()
+    {
+        return R.layout.activity_prueba_activity;
+    }
 }

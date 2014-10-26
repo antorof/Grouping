@@ -8,9 +8,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.view.ActionMode;
 import android.util.Log;
 import android.util.SparseBooleanArray;
-import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,14 +23,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
 import com.cojisoft.database.ScheduleContract.Product;
 import com.cojisoft.database.ScheduleContract.User;
 import com.cojisoft.database.ScheduleDatabase;
 import com.cojisoft.database.ScheduleDatabase.Tables;
 import com.cojisoft.models.ModelBase;
 import com.cojisoft.models.ModelProduct;
+
+import java.util.ArrayList;
 
 /**
  * Fragmento con una lista de productos. Permite la multiselección de los diferentes items
@@ -39,7 +39,7 @@ import com.cojisoft.models.ModelProduct;
  * @author DavidGSola
  *
  */
-public abstract class BaseFragment extends Fragment implements ActionMode.Callback
+public abstract class BaseFragment extends Fragment implements android.support.v7.view.ActionMode.Callback
 {
 	public interface OnListChangedListener
 	{
@@ -159,7 +159,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 		{
 			item1.startAnimation(rotate_in);
 			item2.startAnimation(rotate_out);
-			
+
             item1.setVisibility(View.VISIBLE);
 			// Volvemos a hacerlo invisible una vez termina la animación
 		    mHandler.postDelayed(new Runnable()
@@ -355,7 +355,7 @@ public abstract class BaseFragment extends Fragment implements ActionMode.Callba
 	}
 	
 	@Override
-	public boolean onActionItemClicked(ActionMode mode, MenuItem item) 
+	public boolean onActionItemClicked(ActionMode mode, MenuItem item)
 	{
 		switch (item.getItemId()) 
 		{

@@ -1,23 +1,24 @@
 package com.cojisoft.roommates;
 
-import java.util.ArrayList;
-
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
-import android.view.Gravity;
+import android.support.v4.view.GravityCompat;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.cojisoft.Utils.UIUtils;
+
+import java.util.ArrayList;
 
 /**
  * Activity básico que maneja la funcionalidad básica y común de cualquier activity:
@@ -25,24 +26,26 @@ import com.cojisoft.Utils.UIUtils;
  * @author DavidGSola
  *
  */
-public abstract class BaseActivity extends Activity  
+public abstract class BaseActivity extends ActionBarActivity
 {
 	/**
 	 * Handler para retrasar el cambio entre activities
 	 */
-    private Handler mHandler;	
-	
+    private Handler mHandler;
+
     /**
      * NavDrawer
      */
 	private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
-	
+
+    private Toolbar toolbar;
+
     /**
      * Viewgroup con los elementos del navdrawer
      */
     private ViewGroup mDrawerItemsListContainer;
-    
+
     /**
      *  Listado en orden de los navdrawer items que se han añadido al navdrawer
      */
@@ -52,7 +55,7 @@ public abstract class BaseActivity extends Activity
      *  Views que corresponden con cada navdrawer item, null si no ha sido creado
      */
     private View[] mNavDrawerItemViews = null;
-    
+
     // Lista con todos los posibles items que puede haber en el navdrawer.
     protected static final int NAVDRAWER_ITEM_SUMMARY = 0;
     protected static final int NAVDRAWER_ITEM_GROCERIES = 1;
@@ -63,7 +66,7 @@ public abstract class BaseActivity extends Activity
     protected static final int NAVDRAWER_ITEM_INVALID = -1;
     protected static final int NAVDRAWER_ITEM_SEPARATOR = -2;
 
-    // Títulos de los posibles items del navdrawer 
+    // Títulos de los posibles items del navdrawer
     //(los indices deben corresponder con los de la lista superior)
     private static final int[] NAVDRAWER_TITLE_RES_ID = new int[]{
             R.string.navdrawer_item_summary,
@@ -73,7 +76,7 @@ public abstract class BaseActivity extends Activity
             R.string.navdrawer_item_roommates,
             R.string.navdrawer_item_settings,
     };
-    
+
     // Iconos de los posibles items del navdrawer
     //(los indices deben corresponder con los de la lista superior)
     private static final int[] NAVDRAWER_ICON_RES_ID = new int[] {
@@ -84,7 +87,7 @@ public abstract class BaseActivity extends Activity
             R.drawable.ic_drawer_launcher, // Roommates
             R.drawable.ic_drawer_settings, // Settings
     };
-    
+
     // Delay para lanzar un item del navdrawer para permitir realizar la animación de cerrado
     private static final int NAVDRAWER_LAUNCH_DELAY = 250;
 
@@ -92,45 +95,51 @@ public abstract class BaseActivity extends Activity
     // a través del NavDrawer
     private static final int MAIN_CONTENT_FADEOUT_DURATION = 150;
     private static final int MAIN_CONTENT_FADEIN_DURATION = 250;
-    
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) 
+	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		
+
 		mHandler = new Handler();
+        setContentView(getLayoutResource());
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null)
+        {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 	}
-	
+
+
 	@Override
-	protected void onPostCreate(Bundle savedInstanceState) 
+	protected void onPostCreate(Bundle savedInstanceState)
 	{
 		super.onPostCreate(savedInstanceState);
-		
-		ActionBar ab = getActionBar();
-        if (ab != null)
-            ab.setDisplayHomeAsUpEnabled(true);
-
         // Crear la navdrawer
 		setupNavDrawer();
-		
+
         // Fadein
        /* View mainContent = findViewById(R.id.main_content);
-        if (mainContent != null) 
+        if (mainContent != null)
         {
             mainContent.setAlpha(0);
             mainContent.animate().alpha(1).setDuration(MAIN_CONTENT_FADEIN_DURATION);
-        }*/ 	
+        }*/
 	 }
 
+    protected abstract int getLayoutResource();
+
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) 
+	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		getMenuInflater().inflate(R.menu.base, menu);
 		return true;
 	}
 
 	@Override
-    public void onConfigurationChanged(Configuration newConfig) 
+    public void onConfigurationChanged(Configuration newConfig)
 	{
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
@@ -142,7 +151,7 @@ public abstract class BaseActivity extends Activity
     	// true se ha maejado el evento sobre el icono de la app
         if (mDrawerToggle != null && mDrawerToggle.onOptionsItemSelected(item))
           return true;
-        
+
         // Manejar el resto de acciones sobre los items de la actionbar
 
         return super.onOptionsItemSelected(item);
@@ -154,7 +163,7 @@ public abstract class BaseActivity extends Activity
      * propio item.
      * @return NAVDRAWER_ITEM_INVALID para indicar que este Activity no tiene item en el navdrawer
      */
-    protected int getSelfNavDrawerItem() 
+    protected int getSelfNavDrawerItem()
     {
         return NAVDRAWER_ITEM_INVALID;
     }
@@ -168,10 +177,10 @@ public abstract class BaseActivity extends Activity
     {
     	return itemId == NAVDRAWER_ITEM_SETTINGS;
     }
-    
+
     /**
      * Setup el navdrawer apropiadamente. Aquí podemos hacer que el navdrawer se cree
-     * de manera diferente dependiende de los settings o de la activity donde nos 
+     * de manera diferente dependiende de los settings o de la activity donde nos
      * encontremos.
      */
 	private void setupNavDrawer()
@@ -179,18 +188,17 @@ public abstract class BaseActivity extends Activity
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		if (mDrawerLayout == null)
 			return;
-		
-        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
 
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-                R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close) {
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+        mDrawerLayout.setScrimColor(getResources().getColor(R.color.navdrawer_shadow_color));
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
 
             /** Se llama cuando el drawer se ha cerrado completamente. */
             @Override
-			public void onDrawerClosed(View view) 
+			public void onDrawerClosed(View view)
             {
                 super.onDrawerClosed(view);
-                getActionBar().setTitle(getString(R.string.app_name));
+                getSupportActionBar().setTitle(getString(R.string.app_name));
                 invalidateOptionsMenu(); // recrear el menú de opciones
             }
 
@@ -198,44 +206,43 @@ public abstract class BaseActivity extends Activity
             @Override
 			public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getActionBar().setTitle(getString(R.string.app_name));
+                getSupportActionBar().setTitle(getString(R.string.app_name));
                 invalidateOptionsMenu(); // recrear el menú de opciones
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         mDrawerToggle.syncState();
-        
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         // Populate el navdrawer con los items que correspondan
         populateNavDrawer();
 	}
-	
+
 	/**
 	 * Crea el navdrawer con los items que correspondan
 	 */
 	private void populateNavDrawer()
 	{
         mNavDrawerItems.clear();
-        
+
         mNavDrawerItems.add(NAVDRAWER_ITEM_SUMMARY);
-        
+
         mNavDrawerItems.add(NAVDRAWER_ITEM_SEPARATOR);
-        
+
         mNavDrawerItems.add(NAVDRAWER_ITEM_GROCERIES);
         mNavDrawerItems.add(NAVDRAWER_ITEM_TASKS);
         mNavDrawerItems.add(NAVDRAWER_ITEM_BILLS);
         mNavDrawerItems.add(NAVDRAWER_ITEM_ROOMMATES);
-        
+
         mNavDrawerItems.add(NAVDRAWER_ITEM_SEPARATOR);
-        
+
         mNavDrawerItems.add(NAVDRAWER_ITEM_SETTINGS);
-        
+
         createNavDrawerItems();
 	}
-	
+
 	/**
 	 * Crea los diferentes items del navdrawer
 	 */
@@ -247,33 +254,33 @@ public abstract class BaseActivity extends Activity
 
 		mNavDrawerItemViews = new View[mNavDrawerItems.size()];
 		mDrawerItemsListContainer.removeAllViews();
-	    
+
 		// Crea cada item de la lista de items a crear
 	    int i = 0;
-	    for (int itemId : mNavDrawerItems) 
+	    for (int itemId : mNavDrawerItems)
 	    {
 	    	mNavDrawerItemViews[i] = makeNavDrawerItem(itemId, mDrawerItemsListContainer);
 	        mDrawerItemsListContainer.addView(mNavDrawerItemViews[i]);
 	        ++i;
 	    }
 	}
-	
+
 	/**
 	 * Crea un item del navdrawer con su icono y texto correspondiente
 	 * @param itemId id del item
 	 * @param container viewgroup del navdrawer
 	 * @return view del item
 	 */
-	private View makeNavDrawerItem(final int itemId, ViewGroup container) 
+	private View makeNavDrawerItem(final int itemId, ViewGroup container)
 	{
         boolean selected = getSelfNavDrawerItem() == itemId;
         int layoutToInflate = 0;
-    
+
         if (itemId == NAVDRAWER_ITEM_SEPARATOR)
             layoutToInflate = R.layout.navdrawer_separator;
         else
             layoutToInflate = R.layout.navdrawer_item;
-        
+
         View view = getLayoutInflater().inflate(layoutToInflate, container, false);
 
         if (itemId == NAVDRAWER_ITEM_SEPARATOR)
@@ -282,7 +289,7 @@ public abstract class BaseActivity extends Activity
             return view;
         }
 
-        
+
         ImageView iconView = (ImageView) view.findViewById(R.id.icon);
         TextView titleView = (TextView) view.findViewById(R.id.title);
         // Comprobar que no nos salimos del vector (haber introducido un item que no se espera)
@@ -293,19 +300,19 @@ public abstract class BaseActivity extends Activity
 
         // Setear el icono y el texto
         iconView.setVisibility(iconId > 0 ? View.VISIBLE : View.GONE);
-        if (iconId > 0) 
+        if (iconId > 0)
             iconView.setImageResource(iconId);
-        
+
         titleView.setText(getString(titleId));
 
         // Formatear el item
         formatNavDrawerItem(view, itemId, selected);
 
         // Asociar el listener
-        view.setOnClickListener(new View.OnClickListener() 
+        view.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v) 
+            public void onClick(View v)
             {
                 onNavDrawerItemClicked(itemId);
             }
@@ -313,15 +320,15 @@ public abstract class BaseActivity extends Activity
 
         return view;
     }
-	
+
 	/**
 	 * Formatea un item del navdrawer dependiendo de si es el item de la activity
 	 * actual o no
 	 * @param view view
 	 * @param itemId id del item
-	 * @param selected 
+	 * @param selected
 	 */
-    private void formatNavDrawerItem(View view, int itemId, boolean selected) 
+    private void formatNavDrawerItem(View view, int itemId, boolean selected)
     {
         if (itemId == NAVDRAWER_ITEM_SEPARATOR)
             return;
@@ -337,24 +344,24 @@ public abstract class BaseActivity extends Activity
                 getResources().getColor(R.color.navdrawer_icon_tint_selected) :
                 getResources().getColor(R.color.navdrawer_icon_tint));
     }
-    
+
     /**
      * Función asociada al listener de los items del navdrawer.
      * @param itemId id del item seleccionado del navdrawer
      */
-    private void onNavDrawerItemClicked(final int itemId) 
+    private void onNavDrawerItemClicked(final int itemId)
     {
     	// Si es el mismo cerramos el navdrawer
-    	if (itemId == getSelfNavDrawerItem()) 
+    	if (itemId == getSelfNavDrawerItem())
     	{
-    		mDrawerLayout.closeDrawer(Gravity.START);
+    		mDrawerLayout.closeDrawer(GravityCompat.START);
     		return;
     	}
-	
+
     	// Si es un item especial (settings) no hacemos animación
     	if (isSpecialItem(itemId))
     		goToNavDrawerItem(itemId);
-    	else 
+    	else
     	{
     		// Lanzamos la actividad después de un tiempo para permitir realizar la animación de fadeout
 		    mHandler.postDelayed(new Runnable()
@@ -364,31 +371,31 @@ public abstract class BaseActivity extends Activity
 		            goToNavDrawerItem(itemId);
 		        }
 		    }, NAVDRAWER_LAUNCH_DELAY);
-	
+
 		    setSelectedNavDrawerItem(itemId);
-		 
+
 		    // fadeout
 /*		    View mainContent = findViewById(R.id.main_content);
-		    if (mainContent != null) 
+		    if (mainContent != null)
 		    {
 		        mainContent.animate().alpha(0).setDuration(MAIN_CONTENT_FADEOUT_DURATION);
 		    }*/
     	}
-	
-    	mDrawerLayout.closeDrawer(Gravity.START);
+
+    	mDrawerLayout.closeDrawer(GravityCompat.START);
     }
-    
+
     /**
      * Setear el item del navdrawer que ha sido seleccionado
      * @param itemId
      */
     private void setSelectedNavDrawerItem(int itemId)
     {
-        if (mNavDrawerItemViews != null) 
+        if (mNavDrawerItemViews != null)
         {
-            for (int i = 0; i < mNavDrawerItemViews.length; i++) 
+            for (int i = 0; i < mNavDrawerItemViews.length; i++)
             {
-                if (i < mNavDrawerItems.size()) 
+                if (i < mNavDrawerItems.size())
                 {
                     int thisItemId = mNavDrawerItems.get(i);
                     formatNavDrawerItem(mNavDrawerItemViews[i], thisItemId, itemId == thisItemId);
@@ -396,14 +403,14 @@ public abstract class BaseActivity extends Activity
             }
         }
     }
-    
+
     /**
      * Funcionalidad de los items del navdrawer
      * @param item id del item del navdrawer seleccionado
      */
     private void goToNavDrawerItem(int item) {
         Intent intent;
-        switch (item) 
+        switch (item)
         {
 	        case NAVDRAWER_ITEM_GROCERIES:
 	            intent = new Intent(this, GroceriesActivity.class);
