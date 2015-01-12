@@ -22,7 +22,7 @@
         <!-- Bills directory -->
         <activity
             android:name=".BillsActivity"
-            android:label="@string/navdrawer_item_bills" />
+            android:label="@string/navdrawer_item_invitations" />
 
         <!-- Task directory -->
         <activity

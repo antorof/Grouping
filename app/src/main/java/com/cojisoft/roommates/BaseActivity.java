@@ -71,7 +71,7 @@ public abstract class BaseActivity extends ActionBarActivity
     private static final int[] NAVDRAWER_TITLE_RES_ID = new int[]{
             R.string.navdrawer_item_summary,
             R.string.navdrawer_item_public,
-            R.string.navdrawer_item_bills,
+            R.string.navdrawer_item_invitations,
             R.string.navdrawer_item_settings,
             R.string.navdrawer_item_about,
             R.string.navdrawer_item_logout,
@@ -80,12 +80,12 @@ public abstract class BaseActivity extends ActionBarActivity
     // Iconos de los posibles items del navdrawer
     //(los indices deben corresponder con los de la lista superior)
     private static final int[] NAVDRAWER_ICON_RES_ID = new int[] {
-            R.drawable.ic_drawer_launcher,  // Own
-            R.drawable.ic_drawer_groceries,  // Public
-            R.drawable.ic_drawer_launcher, // Invitations
+            R.drawable.ic_home_white_48dp,  // Own
+            R.drawable.ic_drawer_publicas,  // Public
+            R.drawable.ic_inbox_grey600_48dp, // Invitations
             R.drawable.ic_settings_white, // Settings
             R.drawable.ic_info, // About
-            R.drawable.ic_exit, // logout
+            R.drawable.ic_logout_grey600_48dp, // logout
     };
 
     // Delay para lanzar un item del navdrawer para permitir realizar la animación de cerrado

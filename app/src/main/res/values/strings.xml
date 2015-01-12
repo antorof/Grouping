@@ -13,7 +13,7 @@
     <string name="drawer_close">Close Navigation Drawer</string>
     <string name="navdrawer_item_summary">Mis quedadas</string>
     <string name="navdrawer_item_public">P\u00FAblicas</string>
-    <string name="navdrawer_item_bills">Bills</string>
+    <string name="navdrawer_item_invitations">Invitaciones</string>
     <string name="navdrawer_item_settings">Ajustes</string>
     <string name="navdrawer_item_about">Acerca de Grouping</string>
     <string name="navdrawer_item_logout">Cerrar sesi\u00F3n</string>
