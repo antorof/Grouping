@@ -1,12 +1,42 @@
 <merge  xmlns:android="http://schemas.android.com/apk/res/android">
 <!-- Menú Lateral -->
-	<LinearLayout
+    <LinearLayout
+    android:id="@+id/drawerm_wrapper"
+    android:layout_width="240dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="135dp"
+        android:background="@color/primary"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:paddingLeft="16dp">
+
+
+        <TextView
+            android:text="email@domain.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:layout_gravity="bottom"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/navdrawer"
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="56dp"
         android:background="#F3F3F4"
         android:choiceMode="singleChoice"
         android:orientation="vertical" />
+
+</LinearLayout>
 </merge>
