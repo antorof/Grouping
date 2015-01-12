@@ -1,8 +1,8 @@
 <merge  xmlns:android="http://schemas.android.com/apk/res/android">
 <!-- Menú Lateral -->
     <LinearLayout
-    android:id="@+id/drawerm_wrapper"
-    android:layout_width="240dp"
+    android:id="@+id/drawer_wrapper"
+    android:layout_width="260dp"
     android:layout_height="match_parent"
     android:layout_gravity="start"
     android:background="@android:color/white"
@@ -16,6 +16,10 @@
         android:gravity="bottom"
         android:paddingLeft="16dp">
 
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/persona5"/>
 
         <TextView
             android:text="email@domain.com"
