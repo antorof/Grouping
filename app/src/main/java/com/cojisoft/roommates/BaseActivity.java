@@ -57,12 +57,12 @@ public abstract class BaseActivity extends ActionBarActivity
     private View[] mNavDrawerItemViews = null;
 
     // Lista con todos los posibles items que puede haber en el navdrawer.
-    protected static final int NAVDRAWER_ITEM_SUMMARY = 0;
-    protected static final int NAVDRAWER_ITEM_GROCERIES = 1;
-    protected static final int NAVDRAWER_ITEM_TASKS = 2;
-    protected static final int NAVDRAWER_ITEM_BILLS = 3;
-    protected static final int NAVDRAWER_ITEM_ROOMMATES = 4;
-    protected static final int NAVDRAWER_ITEM_SETTINGS = 5;
+    protected static final int NAVDRAWER_ITEM_MISQUEDADAS = 0;
+    protected static final int NAVDRAWER_ITEM_PUBLICAS = 1;
+    protected static final int NAVDRAWER_ITEM_INVITACIONES = 2;
+    protected static final int NAVDRAWER_ITEM_AJUSTES = 3;
+    protected static final int NAVDRAWER_ITEM_ABOUT = 4;
+    protected static final int NAVDRAWER_ITEM_LOGOUT = 5;
     protected static final int NAVDRAWER_ITEM_INVALID = -1;
     protected static final int NAVDRAWER_ITEM_SEPARATOR = -2;
 
@@ -70,22 +70,22 @@ public abstract class BaseActivity extends ActionBarActivity
     //(los indices deben corresponder con los de la lista superior)
     private static final int[] NAVDRAWER_TITLE_RES_ID = new int[]{
             R.string.navdrawer_item_summary,
-            R.string.navdrawer_item_groceries,
-            R.string.navdrawer_item_tasks,
+            R.string.navdrawer_item_public,
             R.string.navdrawer_item_bills,
-            R.string.navdrawer_item_roommates,
             R.string.navdrawer_item_settings,
+            R.string.navdrawer_item_about,
+            R.string.navdrawer_item_logout,
     };
 
     // Iconos de los posibles items del navdrawer
     //(los indices deben corresponder con los de la lista superior)
     private static final int[] NAVDRAWER_ICON_RES_ID = new int[] {
-            R.drawable.ic_drawer_launcher,  // Summary
-            R.drawable.ic_drawer_groceries,  // Groceries
-            R.drawable.ic_drawer_launcher, // Tasks
-            R.drawable.ic_drawer_launcher, // Bills
-            R.drawable.ic_drawer_launcher, // Roommates
-            R.drawable.ic_drawer_settings, // Settings
+            R.drawable.ic_drawer_launcher,  // Own
+            R.drawable.ic_drawer_groceries,  // Public
+            R.drawable.ic_drawer_launcher, // Invitations
+            R.drawable.ic_settings_white, // Settings
+            R.drawable.ic_info, // About
+            R.drawable.ic_exit, // logout
     };
 
     // Delay para lanzar un item del navdrawer para permitir realizar la animación de cerrado
@@ -175,7 +175,7 @@ public abstract class BaseActivity extends ActionBarActivity
      */
     private boolean isSpecialItem(final int itemId)
     {
-    	return itemId == NAVDRAWER_ITEM_SETTINGS;
+    	return itemId == NAVDRAWER_ITEM_AJUSTES;
     }
 
     /**
@@ -227,18 +227,18 @@ public abstract class BaseActivity extends ActionBarActivity
 	{
         mNavDrawerItems.clear();
 
-        mNavDrawerItems.add(NAVDRAWER_ITEM_SUMMARY);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_MISQUEDADAS);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_PUBLICAS);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_INVITACIONES);
 
         mNavDrawerItems.add(NAVDRAWER_ITEM_SEPARATOR);
 
-        mNavDrawerItems.add(NAVDRAWER_ITEM_GROCERIES);
-        mNavDrawerItems.add(NAVDRAWER_ITEM_TASKS);
-        mNavDrawerItems.add(NAVDRAWER_ITEM_BILLS);
-        mNavDrawerItems.add(NAVDRAWER_ITEM_ROOMMATES);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_AJUSTES);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_ABOUT);
 
         mNavDrawerItems.add(NAVDRAWER_ITEM_SEPARATOR);
 
-        mNavDrawerItems.add(NAVDRAWER_ITEM_SETTINGS);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_LOGOUT);
 
         createNavDrawerItems();
 	}
@@ -412,22 +412,22 @@ public abstract class BaseActivity extends ActionBarActivity
         Intent intent;
         switch (item)
         {
-	        case NAVDRAWER_ITEM_GROCERIES:
+	        case NAVDRAWER_ITEM_PUBLICAS:
 	            intent = new Intent(this, GroceriesActivity.class);
 	            startActivity(intent);
 	            finish();
 	            break;
-	        case NAVDRAWER_ITEM_BILLS:
+	        case NAVDRAWER_ITEM_ABOUT:
 	            intent = new Intent(this, BillsActivity.class);
 	            startActivity(intent);
 	            finish();
 	            break;
-	        case NAVDRAWER_ITEM_TASKS:
+	        case NAVDRAWER_ITEM_INVITACIONES:
 	            intent = new Intent(this, TasksActivity.class);
 	            startActivity(intent);
 	            finish();
 	            break;
-            case NAVDRAWER_ITEM_ROOMMATES:
+            case NAVDRAWER_ITEM_LOGOUT:
                 intent = new Intent(this, RoommatesActivity.class);
                 startActivity(intent);
                 finish();

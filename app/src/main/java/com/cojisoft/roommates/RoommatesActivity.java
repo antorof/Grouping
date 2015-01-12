@@ -28,6 +28,6 @@ public class RoommatesActivity extends BaseActivity
 	@Override
     protected int getSelfNavDrawerItem() 
     {
-        return NAVDRAWER_ITEM_ROOMMATES;
+        return NAVDRAWER_ITEM_LOGOUT;
     }
 }

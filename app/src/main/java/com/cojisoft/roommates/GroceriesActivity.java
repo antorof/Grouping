@@ -169,7 +169,7 @@ public class GroceriesActivity extends BaseActivity implements  OnListChangedLis
 	@Override
     protected int getSelfNavDrawerItem() 
     {
-        return NAVDRAWER_ITEM_GROCERIES;
+        return NAVDRAWER_ITEM_PUBLICAS;
     }
 
 	@Override

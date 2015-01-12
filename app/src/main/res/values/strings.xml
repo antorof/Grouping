@@ -11,12 +11,12 @@
 
     <string name="drawer_open">Open Navigation Drawer</string>
     <string name="drawer_close">Close Navigation Drawer</string>
-    <string name="navdrawer_item_summary">Summary</string>
-    <string name="navdrawer_item_groceries">Groceries</string>
-    <string name="navdrawer_item_tasks">Tasks</string>
+    <string name="navdrawer_item_summary">Mis quedadas</string>
+    <string name="navdrawer_item_public">P\u00FAblicas</string>
     <string name="navdrawer_item_bills">Bills</string>
-    <string name="navdrawer_item_roommates">Roommates</string>
-    <string name="navdrawer_item_settings">Settings</string>
+    <string name="navdrawer_item_settings">Ajustes</string>
+    <string name="navdrawer_item_about">Acerca de Grouping</string>
+    <string name="navdrawer_item_logout">Cerrar sesi\u00F3n</string>
     <string name="add_button_description">Button to add a item to the App</string>
     <string name="user_icon_description">User icon on a list item</string>
     <string name="user_icon_selected_description">User icon selected on a list item</string>

@@ -11,7 +11,7 @@
         <!-- Groceries directory -->
         <activity
             android:name=".GroceriesActivity"
-            android:label="@string/navdrawer_item_groceries" >
+            android:label="@string/navdrawer_item_public" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,17 +27,17 @@
         <!-- Task directory -->
         <activity
             android:name=".TasksActivity"
-            android:label="@string/navdrawer_item_tasks" />
+            android:label="@string/navdrawer_item_logout" />
 
         <!-- Roommates directory -->
         <activity
             android:name=".RoommatesActivity"
-            android:label="@string/navdrawer_item_roommates" />
+            android:label="@string/navdrawer_item_about" />
 
         <!-- New directory -->
         <activity
             android:name=".NewActivity"
-            android:label="@string/navdrawer_item_roommates" />
+            android:label="@string/navdrawer_item_about" />
         <activity
             android:name=".prueba_activity"
             android:label="@string/title_activity_prueba_activity" >

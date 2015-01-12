@@ -129,7 +129,7 @@ public class BillsActivity extends BaseActivity implements ActionBar.TabListener
 	@Override
     protected int getSelfNavDrawerItem() 
     {
-        return NAVDRAWER_ITEM_BILLS;
+        return NAVDRAWER_ITEM_ABOUT;
     }
 
 	@Override

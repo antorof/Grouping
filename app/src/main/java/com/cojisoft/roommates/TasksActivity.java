@@ -129,7 +129,7 @@ public class TasksActivity extends BaseActivity implements ActionBar.TabListener
 	@Override
     protected int getSelfNavDrawerItem() 
     {
-        return NAVDRAWER_ITEM_TASKS;
+        return NAVDRAWER_ITEM_INVITACIONES;
     }
 
 	@Override
