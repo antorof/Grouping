@@ -85,7 +85,7 @@ public abstract class BaseActivity extends ActionBarActivity
             R.drawable.ic_inbox_grey600_48dp, // Invitations
             R.drawable.ic_settings_white, // Settings
             R.drawable.ic_info, // About
-            R.drawable.ic_logout_grey600_48dp, // logout
+            R.drawable.ic_exit, // logout
     };
 
     // Delay para lanzar un item del navdrawer para permitir realizar la animación de cerrado
