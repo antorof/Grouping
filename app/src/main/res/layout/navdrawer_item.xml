@@ -4,6 +4,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:layout_width="match_parent"
+    android:background="@drawable/drawer_list_item_selector"
     android:layout_height="48dp">
 
     <ImageView
