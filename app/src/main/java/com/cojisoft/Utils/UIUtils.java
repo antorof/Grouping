@@ -95,7 +95,7 @@ public class UIUtils
 		if(color.equals("orange") )
 			return context.getResources().getColor(R.color.orange);
 		else if(color.equals("turquesa") )
-			return context.getResources().getColor(R.color.turquesa);		
+			return context.getResources().getColor(R.color.turquoise);
 		else if(color.equals("red"))
 			return context.getResources().getColor(R.color.red);
 		else

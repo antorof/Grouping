@@ -32,7 +32,7 @@
     <color name="navdrawer_icon_tint_selected">@color/theme_primary</color>
     
     <!-- Colors users -->
-    <color name="turquesa">#6bb5c8</color>
+    <color name="turquoise">#6bb5c8</color>
     <color name="green">#80b565</color>
     <color name="red">#ff828b</color>
     <color name="orange">#ffc571</color>
