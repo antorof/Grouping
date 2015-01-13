@@ -28,6 +28,6 @@ public class InvitacionesActivity extends BaseActivity
     @Override
     protected int getSelfNavDrawerItem()
     {
-        return NAVDRAWER_ITEM_LOGOUT;
+        return NAVDRAWER_ITEM_INVITACIONES;
     }
 }
