@@ -33,6 +33,11 @@
             android:name=".RoommatesActivity"
             android:label="@string/navdrawer_item_about" />
 
+        <!-- Invitados directory -->
+        <activity
+            android:name=".InvitacionesActivity"
+            android:label="@string/navdrawer_item_invitations" />
+
         <!-- New directory -->
         <activity
             android:name=".NewActivity"

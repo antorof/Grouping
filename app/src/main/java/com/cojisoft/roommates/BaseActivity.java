@@ -423,7 +423,7 @@ public abstract class BaseActivity extends ActionBarActivity
 	            finish();
 	            break;
 	        case NAVDRAWER_ITEM_INVITACIONES:
-	            intent = new Intent(this, TasksActivity.class);
+	            intent = new Intent(this, InvitacionesActivity.class);
 	            startActivity(intent);
 	            finish();
 	            break;

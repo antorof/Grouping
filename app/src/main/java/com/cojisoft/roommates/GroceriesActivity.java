@@ -22,7 +22,7 @@ public class GroceriesActivity extends BaseActivity implements  OnListChangedLis
 	SectionsPagerAdapter mSectionsPagerAdapter;
 
 	GroceriesFragment[] fragments;
-	
+
 	/**
 	 * The {@link ViewPager} that will host the section contents.
 	 */
@@ -38,7 +38,7 @@ public class GroceriesActivity extends BaseActivity implements  OnListChangedLis
         }
     }
 	@Override
-	protected void onCreate(Bundle savedInstanceState) 
+	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		fragments = new GroceriesFragment[2];
@@ -72,10 +72,10 @@ public class GroceriesActivity extends BaseActivity implements  OnListChangedLis
 		mViewPager = (ViewPager) findViewById(R.id.viewpager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		mViewPager.setOnPageChangeListener(
-			new ViewPager.SimpleOnPageChangeListener() 
+			new ViewPager.SimpleOnPageChangeListener()
 			{
 				@Override
-		        public void onPageSelected(int position) 
+		        public void onPageSelected(int position)
 		        {
 					actionBar.setSelectedNavigationItem(position);
 		        }
@@ -107,16 +107,16 @@ public class GroceriesActivity extends BaseActivity implements  OnListChangedLis
 	}
 /*
 	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) 
+	public void onTabSelected(Tab tab, FragmentTransaction ft)
 	{
         mViewPager.setCurrentItem(tab.getPosition());
 	}
 
 	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) 
+	public void onTabReselected(Tab tab, FragmentTransaction ft)
 	{
 	}
-	
+
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft)
 	{
@@ -127,16 +127,16 @@ public class GroceriesActivity extends BaseActivity implements  OnListChangedLis
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 	 * one of the sections/tabs/pages.
 	 */
-	public class SectionsPagerAdapter extends FragmentPagerAdapter 
+	public class SectionsPagerAdapter extends FragmentPagerAdapter
 	{
 
-		public SectionsPagerAdapter(FragmentManager fragmentManager) 
+		public SectionsPagerAdapter(FragmentManager fragmentManager)
 		{
 			super(fragmentManager);
 		}
 
 		@Override
-		public Fragment getItem(int position) 
+		public Fragment getItem(int position)
 		{
 			// getItem is called to instantiate the fragment for the given page.
 			Bundle args = new Bundle();
@@ -147,15 +147,15 @@ public class GroceriesActivity extends BaseActivity implements  OnListChangedLis
 		}
 
 		@Override
-		public int getCount() 
+		public int getCount()
 		{
 			return 2;
 		}
 
 		@Override
-		public CharSequence getPageTitle(int position) 
+		public CharSequence getPageTitle(int position)
 		{
-			switch (position) 
+			switch (position)
 			{
 				case 0:
 					return getString(R.string.urgent_list);
@@ -165,15 +165,15 @@ public class GroceriesActivity extends BaseActivity implements  OnListChangedLis
 			return null;
 		}
 	}
-	
+
 	@Override
-    protected int getSelfNavDrawerItem() 
+    protected int getSelfNavDrawerItem()
     {
         return NAVDRAWER_ITEM_PUBLICAS;
     }
 
 	@Override
-	public void OnListItemMoved(Fragment fragment, ModelBase product) 
+	public void OnListItemMoved(Fragment fragment, ModelBase product)
 	{
 		for(int i=0; i<fragments.length; i++)
 			if(fragments[i] != fragment)

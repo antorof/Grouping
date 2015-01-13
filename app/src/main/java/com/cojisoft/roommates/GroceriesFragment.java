@@ -45,7 +45,7 @@ public class GroceriesFragment extends BaseFragment
 	 * Adapter de la lista
 	 */
 	protected GroceriesAdapter mAdapter = null;
-	
+
 	/**
 	 * Devuelve una instancia de BillsFragment
 	 * @return
@@ -54,9 +54,9 @@ public class GroceriesFragment extends BaseFragment
 	{
 		return new GroceriesFragment();
 	}
-	
+
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 	    return inflater.inflate(R.layout.fragment_groceries, container, false);
 	}
@@ -65,27 +65,27 @@ public class GroceriesFragment extends BaseFragment
 	protected void createList(View view, SQLiteDatabase db)
 	{
 		lista = (ListView) view.findViewById(R.id.list_groceries);
-		
+
 		// Añadir un header y un footer a la lista (esto hace que los
 		// elementos de la lista empiecen en la posición 1 ya que el header
 		// es la posición 0.
 		UIUtils.addHeaderFooterDivider(lista, getActivity());
-		
+
 		productos = new ArrayList<ModelProduct>();
-		
+
 		// La consulta a la BD varía de si es una lista urgente o no
 		Cursor cursor = getItems(db, isSpecialList);
 		while(cursor.moveToNext())
 			productos.add((ModelProduct)createItemFromCursor(cursor, isSpecialList));
-		
+
 		cursor.close();
-		
+
 		mAdapter = new GroceriesAdapter(getActivity(), productos, db);
 		mAdapter.sort(new SortByDate());
 
 		lista.setAdapter(mAdapter);
 		lista.setClickable(true);
-		lista.setOnItemClickListener(new OnItemClickListener() 
+		lista.setOnItemClickListener(new OnItemClickListener()
 		{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
@@ -95,11 +95,11 @@ public class GroceriesFragment extends BaseFragment
 					final ImageView productPurchaserIcon = (ImageView) view.findViewById(R.id.icon_purchaser);
 					final ImageView selectedIcon = (ImageView) view.findViewById(R.id.icon_purchaser_selected);
 					CheckBox checkBox = (CheckBox) view.findViewById(R.id.item_check_box);
-	
+
 					// Cambiamos el estado del checkbox. Dependiendo del nuevo estado se
 					// modifica el diseño del item para que el usuario conozca el estado
 					checkBox.toggle();
-					
+
 					animateIcons(productPurchaserIcon, selectedIcon, checkBox.isChecked(), view);
 				}
 			}
@@ -107,28 +107,28 @@ public class GroceriesFragment extends BaseFragment
 	}
 
 	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) 
+	public void onViewCreated(View view, Bundle savedInstanceState)
 	{
-		final ScheduleDatabase mDBHelper = new ScheduleDatabase(getActivity());		
+		final ScheduleDatabase mDBHelper = new ScheduleDatabase(getActivity());
 		final SQLiteDatabase db = mDBHelper.getReadableDatabase();
 
 		init(view);
 		createList(view, db);
 	}
-	
+
 	@Override
-	protected Cursor getItems(SQLiteDatabase db, boolean special) 
+	protected Cursor getItems(SQLiteDatabase db, boolean special)
 	{
 		if(special)
-			return db.query(Tables.PRODUCTS, GroceriesQuery.PROJECTION, 
+			return db.query(Tables.PRODUCTS, GroceriesQuery.PROJECTION,
 					Product.PRODUCT_URGENT+">0", null, null, null, null /*order*/);
 		else
-			return db.query(Tables.PRODUCTS, GroceriesQuery.PROJECTION, 
+			return db.query(Tables.PRODUCTS, GroceriesQuery.PROJECTION,
 					Product.PRODUCT_URGENT+"=0", null, null, null, null /*order*/);
 	}
-	
+
 	@Override
-	protected ModelBase createItemFromCursor(Cursor cursor, Boolean special) 
+	protected ModelBase createItemFromCursor(Cursor cursor, Boolean special)
 	{
 		String productName = cursor.getString(cursor.getColumnIndexOrThrow(Product.PRODUCT_NAME));
 		String productSubname = cursor.getString(cursor.getColumnIndexOrThrow(Product.PRODUCT_SUBNAME));
@@ -136,74 +136,74 @@ public class GroceriesFragment extends BaseFragment
 		int productMonth = cursor.getInt(cursor.getColumnIndexOrThrow(Product.PRODUCT_MONTH));
 		int productPurchaserId = cursor.getInt(cursor.getColumnIndexOrThrow(Product.PRODUCT_PURCHASER_ID));
 		int productId = cursor.getInt(cursor.getColumnIndexOrThrow(Product._ID));
-		
+
 		return new ModelProduct(productName, productSubname, productDay, productMonth, productPurchaserId, special, productId);
-	
+
 	}
 
 	@Override
-	protected void deleteItem(String id) 
+	protected void deleteItem(String id)
 	{
 		ScheduleDatabase mDBHelper = new ScheduleDatabase(getActivity());
 		SQLiteDatabase db = mDBHelper.getWritableDatabase();
-		
-		db.delete(Tables.PRODUCTS, Product._ID+"=?", 
+
+		db.delete(Tables.PRODUCTS, Product._ID+"=?",
 				new String[]{id});
-		
+
 		db.close();
-			
+
 	}
 
 	@Override
-	protected void toggleSpecialItem(String id) 
+	protected void toggleSpecialItem(String id)
 	{
 		ScheduleDatabase mDBHelper = new ScheduleDatabase(getActivity());
 		SQLiteDatabase db = mDBHelper.getWritableDatabase();
-		
+
 		ContentValues values = new ContentValues();
 		values.put(Product.PRODUCT_URGENT, isSpecialList ? 0 : 1);
-		
-		db.update(Tables.PRODUCTS, values, Product._ID+"=?", 
+
+		db.update(Tables.PRODUCTS, values, Product._ID+"=?",
 				new String[]{id});
-			
+
 		db.close();
 	}
 
 	@Override
-	protected void addItemToAdapter(ModelBase item) 
+	protected void addItemToAdapter(ModelBase item)
 	{
 		mAdapter.add((ModelProduct) item);
 	}
 
 	@Override
-	protected void deleteItemFromAdapter(ModelBase item) 
+	protected void deleteItemFromAdapter(ModelBase item)
 	{
 		mAdapter.remove((ModelProduct) item);
 	}
-	
+
 	@Override
 	protected void doneCurrentSelectedItems()
 	{
 		ScheduleDatabase mDBHelper = new ScheduleDatabase(getActivity());
 		SQLiteDatabase db = mDBHelper.getWritableDatabase();
-		
+
     	int size = checkedList.size();
     	int i=0;
 		ArrayList<ModelProduct> deleteFromAdapter = new ArrayList<ModelProduct>();
 
-		Cursor cursorUser = db.query(Tables.USERS, UserQuery.PROJECTION, 
+		Cursor cursorUser = db.query(Tables.USERS, UserQuery.PROJECTION,
 				null, null, null, null, null /*order*/);
-		
+
     	while(i<size)
     	{
     		lista.getChildCount();
-    		// La lista empieza en el id 1, por lo tanto es necesario un +1 
+    		// La lista empieza en el id 1, por lo tanto es necesario un +1
     		ModelProduct p = (ModelProduct) lista.getItemAtPosition(checkedList.keyAt(i)+1);
-    		
+
     		cursorUser.moveToPosition(-1);
-    		Cursor cursorProduct = db.query(Tables.PRODUCTS, GroceriesQuery.PROJECTION, 
+    		Cursor cursorProduct = db.query(Tables.PRODUCTS, GroceriesQuery.PROJECTION,
 					Product._ID+"="+p.id, null, null, null, null /*order*/);
-    			
+
     		if(cursorProduct.moveToFirst())
     		{
     			int previousPurchaserId = cursorProduct.getInt(cursorProduct.getColumnIndexOrThrow(Product.PRODUCT_PURCHASER_ID));
@@ -215,31 +215,31 @@ public class GroceriesFragment extends BaseFragment
         			if(cursorUser.getInt(cursorUser.getColumnIndexOrThrow(User._ID)) == previousPurchaserId)
         			{
         				found = true;
-        				
+
         				// Incrementamos la cantidad de Groceries compradas por el usuario
         	    		ContentValues valuesUser = new ContentValues();
-        				valuesUser.put(User.USER_GROCERIES, 
+        				valuesUser.put(User.USER_GROCERIES,
         	    				cursorUser.getInt(cursorUser.getColumnIndexOrThrow(User.USER_GROCERIES))+checkedList.size());
-        	    		
+
         	    		db.update(Tables.USERS, valuesUser, User._ID+"=?", new String[]{String.valueOf(previousPurchaserId)});
-        				
+
         				// Si lo encontramos hay que coger el siguiente
         				if(!cursorUser.moveToNext())
         					cursorUser.moveToFirst();
         				nextPurchaserId = cursorUser.getInt(cursorUser.getColumnIndexOrThrow(User._ID));
         			}
         		}
-        		
+
 	    		ContentValues values = new ContentValues();
 	    		values.put(Product.PRODUCT_URGENT, 0);
 	    		values.put(Product.PRODUCT_PURCHASER_ID, nextPurchaserId);
 	    		values.put(Product.PRODUCT_DAY, UIUtils.getDay());
 	    		values.put(Product.PRODUCT_MONTH, UIUtils.getMonth());
-	    		
-	    		db.update(Tables.PRODUCTS, values, Product._ID+"=?", 
+
+	    		db.update(Tables.PRODUCTS, values, Product._ID+"=?",
 						new String[]{String.valueOf(p.id)});
 	    		values.clear();
-	    		
+
 	    		ModelProduct mp = (ModelProduct) lista.getItemAtPosition((checkedList.keyAt(i)+1));
 
     			deleteFromAdapter.add(mp);
@@ -247,8 +247,8 @@ public class GroceriesFragment extends BaseFragment
 	    		mp.special = false;
 	    		mp.day = UIUtils.getDay();
 	    		mp.month = UIUtils.getMonth();
-	    	
-	    		// Si no nos encontramos en una lista urgente hay que añadir este 
+
+	    		// Si no nos encontramos en una lista urgente hay que añadir este
 	    		// elemento al actuar adapter
     			if(!isSpecialList)
     				mAdapter.add(mp);
@@ -259,7 +259,7 @@ public class GroceriesFragment extends BaseFragment
 
 		cursorUser.close();
     	checkedList.clear();
-    	
+
     	for(ModelProduct p : deleteFromAdapter)
     	{
     		if(isSpecialList)
@@ -270,19 +270,19 @@ public class GroceriesFragment extends BaseFragment
     	mAdapter.sort(new SortByDate());
 		mAdapter.notifyDataSetChanged();
     	db.close();
-    	
+
     	createToastDone(deleteFromAdapter.size());
 	}
 
 	@Override
-	protected void createToastDelete(int size) 
-	{		
+	protected void createToastDelete(int size)
+	{
 		String mensaje = getResources().getString(R.string.toast_deleted_item);
 		UIUtils.crearToast(size + " " + mensaje, getActivity());
 	}
 
 	@Override
-	protected void createToastToggle(int size) 
+	protected void createToastToggle(int size)
 	{
 		String mensaje = isSpecialList ? getResources().getString(R.string.toast_deleted_urgent) :
 										getResources().getString(R.string.toast_added_urgent);
@@ -290,17 +290,17 @@ public class GroceriesFragment extends BaseFragment
 	}
 
 	@Override
-	protected void createToastDone(int size) 
+	protected void createToastDone(int size)
 	{
 		String mensaje = getResources().getString(R.string.toast_purchased_item);
 		UIUtils.crearToast(size + " " + mensaje, getActivity());
 	}
-	
+
 	@Override
-	protected void sortAndNotifyAdapter() 
+	protected void sortAndNotifyAdapter()
 	{
     	mAdapter.sort(new SortByDate());
-		mAdapter.notifyDataSetChanged();	
+		mAdapter.notifyDataSetChanged();
 	}
 
 	@Override
@@ -311,7 +311,7 @@ public class GroceriesFragment extends BaseFragment
 		return true;
 	}
 
-	
+
 	/**
 	 * Adapter para una lista de {@link com.cojisoft.models.ModelProduct}
 	 * @author DavidGSola
@@ -321,31 +321,31 @@ public class GroceriesFragment extends BaseFragment
 	{
 		private final Context context;
 		private final SQLiteDatabase db;
-		
-		public GroceriesAdapter(Context context, ArrayList<ModelProduct> values, SQLiteDatabase db) 
+
+		public GroceriesAdapter(Context context, ArrayList<ModelProduct> values, SQLiteDatabase db)
 		{
 			super(context, R.layout.list_item_groceries, values);
 			this.context = context;
 			this.db = db;
 		}
-		
+
 		@Override
 		public View getView(final int position, View convertView, ViewGroup parent)
-		{	
+		{
 			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View rowView = inflater.inflate(R.layout.list_item_groceries, parent, false);
 
 			ModelProduct product = getItem(position);
-			
+
 			rowView.setTag(position);
-			
+
 			TextView textName = (TextView) rowView.findViewById(R.id.product_name);
 			TextView textSubame = (TextView) rowView.findViewById(R.id.product_subname);
 			TextView textDate = (TextView) rowView.findViewById(R.id.product_date);
 			ImageView icon = (ImageView) rowView.findViewById(R.id.icon_purchaser);
 			ImageView iconSelected = (ImageView) rowView.findViewById(R.id.icon_purchaser_selected);
 			CheckBox checkbox = (CheckBox) rowView.findViewById(R.id.item_check_box);
-			
+
 			// Se comprueba si este item se encuentra entre los elementos checkeados
 			if(checkedList.get(position))
 			{
@@ -361,19 +361,19 @@ public class GroceriesFragment extends BaseFragment
 				iconSelected.setVisibility(View.INVISIBLE);
 			    rowView.setBackgroundColor(getResources().getColor(R.color.backgroundListItem));
 			}
-			
+
 			textName.setText(product.name);
 			textSubame.setText(product.subname);
 			textDate.setText(UIUtils.formatDate(product.day, product.month));
 
 			// Obtener el Usuario que corresponda con el purchaser_id
 			Cursor cursor = db.query(
-					Tables.USERS, 
-					UserQuery.PROJECTION, User._ID+"=?", 
-					new String[]{String.valueOf(product.purchaser_id)}, 
+					Tables.USERS,
+					UserQuery.PROJECTION, User._ID+"=?",
+					new String[]{String.valueOf(product.purchaser_id)},
 					null, null, null);
-			
-			// Lo movemos al primer elemento ya que después de hacer un query el cursor 
+
+			// Lo movemos al primer elemento ya que después de hacer un query el cursor
 			// apunta al elemento -1
 			cursor.moveToFirst();
 			if(cursor.getCount() != 0)
@@ -381,12 +381,12 @@ public class GroceriesFragment extends BaseFragment
 				String color = cursor.getString(cursor.getColumnIndexOrThrow(User.USER_COLOR));
 				icon.setColorFilter(UIUtils.getColor(getActivity(), color));
 			}
-			
+
 			checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
 			{
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView,
-						boolean isChecked) 
+						boolean isChecked)
 				{
 					// Si ya existe lo eliminamos pues lo estamos deseleccionando
 					// Si no lo añadimos ya que estamos seleccionandolo
@@ -394,7 +394,7 @@ public class GroceriesFragment extends BaseFragment
 						checkedList.delete(position);
 					else
 						checkedList.append(position, true);
-					
+
 					// Si se han deseleccionado todos los items se finaliza la barra de acción contextual
 					if(checkedList.size() == 0 && mActionMode != null)
 						mActionMode.finish();
@@ -408,14 +408,14 @@ public class GroceriesFragment extends BaseFragment
 				}
 			});
 
-			
+
 			return rowView;
 		}
 
 	}
-	
-	
-	private interface GroceriesQuery 
+
+
+	private interface GroceriesQuery
 	{
 	    String[] PROJECTION = {
 	    			Product._ID,
