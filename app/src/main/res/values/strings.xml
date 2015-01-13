@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">RoomMates</string>
+    <string name="app_name">Grouping</string>
     <string name="action_purchased">Mark As Purchased</string>
     <string name="action_urgent">Mark As Urgent</string>
     <string name="action_delete">Delete</string>
