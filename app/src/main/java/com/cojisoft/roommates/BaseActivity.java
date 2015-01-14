@@ -412,25 +412,29 @@ public abstract class BaseActivity extends ActionBarActivity
         Intent intent;
         switch (item)
         {
-	        case NAVDRAWER_ITEM_PUBLICAS:
-	            intent = new Intent(this, GroceriesActivity.class);
-	            startActivity(intent);
-	            finish();
-	            break;
-	        case NAVDRAWER_ITEM_ABOUT:
-	            intent = new Intent(this, BillsActivity.class);
-	            startActivity(intent);
-	            finish();
-	            break;
-	        case NAVDRAWER_ITEM_INVITACIONES:
-	            intent = new Intent(this, InvitacionesActivity.class);
-	            startActivity(intent);
-	            finish();
-	            break;
-            case NAVDRAWER_ITEM_LOGOUT:
-                intent = new Intent(this, RoommatesActivity.class);
+            case NAVDRAWER_ITEM_MISQUEDADAS:
+                intent = new Intent(this, MisQuedadasActivity.class);
                 startActivity(intent);
                 finish();
+                break;
+	        case NAVDRAWER_ITEM_PUBLICAS:
+	            intent = new Intent(this, QuedadasActivity.class);
+	            startActivity(intent);
+	            finish();
+	            break;
+            case NAVDRAWER_ITEM_INVITACIONES:
+                intent = new Intent(this, InvitacionesActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case NAVDRAWER_ITEM_AJUSTES:
+                UIUtils.crearToast("Funcionalidad aún no creada", getApplicationContext());
+                break;
+	        case NAVDRAWER_ITEM_ABOUT:
+                UIUtils.crearToast("Funcionalidad aún no creada", getApplicationContext());
+	            break;
+            case NAVDRAWER_ITEM_LOGOUT:
+                UIUtils.crearToast("Funcionalidad aún no creada", getApplicationContext());
                 break;
         }
     }

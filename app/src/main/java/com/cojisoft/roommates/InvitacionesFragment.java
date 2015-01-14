@@ -54,7 +54,8 @@ public class InvitacionesFragment extends Fragment
         mAddButton.bringToFront();
         mAddButton.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
             }
         });
     }

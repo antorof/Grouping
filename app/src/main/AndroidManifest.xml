@@ -10,8 +10,8 @@
 
         <!-- Groceries directory -->
         <activity
-            android:name=".GroceriesActivity"
-            android:label="@string/navdrawer_item_public" >
+            android:name=".MisQuedadasActivity"
+            android:label="@string/navdrawer_item_summary" >
             <intent-filter android:label="@string/app_name">
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -33,15 +33,20 @@
             android:name=".RoommatesActivity"
             android:label="@string/navdrawer_item_about" />
 
+        <!-- Quedadas directory -->
+        <activity
+            android:name=".QuedadasActivity"
+            android:label="@string/navdrawer_item_public" />
+
         <!-- Invitados directory -->
         <activity
             android:name=".InvitacionesActivity"
             android:label="@string/navdrawer_item_invitations" />
 
+        <!-- Crear queadada directory -->
+
         <!-- New directory -->
-        <activity
-            android:name=".NewActivity"
-            android:label="@string/navdrawer_item_about" />
+
         <activity
             android:name=".prueba_activity"
             android:label="@string/title_activity_prueba_activity" >

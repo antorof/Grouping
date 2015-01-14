@@ -20,6 +20,7 @@
     <string name="add_button_description">Button to add a item to the App</string>
     <string name="user_icon_description">User icon on a list item</string>
     <string name="user_icon_selected_description">User icon selected on a list item</string>
+    <string name="title_crear">Crear</string>
 
     <!-- Groceries Activity -->
 

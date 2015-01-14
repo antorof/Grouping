@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background" >
+
+    <include layout="@layout/add_button" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/list_quedadas"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:scrollbars="none"
+            android:divider="@drawable/divider"
+            android:dividerHeight="1dp"
+            android:headerDividersEnabled="false"
+            android:footerDividersEnabled="false" >
+
+            <ImageView
+                android:id="@+id/card"
+                android:layout_width="fill_parent"
+                android:layout_height="280dp"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/card"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/user_icon_description" />
+
+            <ImageView
+                android:id="@+id/card2"
+                android:layout_width="fill_parent"
+                android:layout_height="270dp"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/card"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/user_icon_description" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

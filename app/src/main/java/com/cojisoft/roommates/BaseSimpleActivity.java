@@ -8,7 +8,7 @@ import android.os.Bundle;
 /**
  * A {@link com.cojisoft.roommates.BaseActivity} that simply contains a single fragment. The intent used to invoke this
  * activity is forwarded to the fragment as arguments during fragment instantiation. Derived
- * activities should only need to implement {@link SimpleSinglePaneActivity#onCreatePane()}.
+ * activities should only need to implement)}.
  */
 public abstract class BaseSimpleActivity extends BaseActivity {
     private Fragment mFragment;
@@ -24,7 +24,6 @@ public abstract class BaseSimpleActivity extends BaseActivity {
 
         final String customTitle = getIntent().getStringExtra(Intent.EXTRA_TITLE);
         setTitle(customTitle != null ? customTitle : getTitle());
-
         if (savedInstanceState == null) {
             mFragment = onCreatePane();
             getFragmentManager().beginTransaction()

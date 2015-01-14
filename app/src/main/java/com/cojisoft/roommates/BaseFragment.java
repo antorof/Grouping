@@ -3,7 +3,6 @@ package com.cojisoft.roommates;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -116,10 +115,6 @@ public abstract class BaseFragment extends Fragment implements android.support.v
             @Override
             public void onClick(View view) 
             {
-            	Intent intent = new Intent(getActivity(), NewActivity.class);
-	            startActivity(intent);
-	            
-	            getActivity().overridePendingTransition(R.anim.slide_in_activity, R.anim.slide_out_activity);
             }
         });
 	}
