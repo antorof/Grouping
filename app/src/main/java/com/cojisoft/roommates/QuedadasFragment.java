@@ -8,6 +8,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.cojisoft.Utils.UIUtils;
+
 public class QuedadasFragment extends Fragment
 {
     ImageButton mAddButton;
@@ -33,6 +35,7 @@ public class QuedadasFragment extends Fragment
             @Override
             public void onClick(View view)
             {
+                UIUtils.crearToast("Funcionalidad aún no creada", getActivity());
             }
         });
     }

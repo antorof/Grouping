@@ -22,6 +22,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.cojisoft.Utils.UIUtils;
 import com.cojisoft.database.ScheduleContract.Product;
 import com.cojisoft.database.ScheduleContract.User;
 import com.cojisoft.database.ScheduleDatabase;
@@ -115,6 +116,7 @@ public abstract class BaseFragment extends Fragment implements android.support.v
             @Override
             public void onClick(View view) 
             {
+                UIUtils.crearToast("Funcionalidad aún no creada", getActivity());
             }
         });
 	}

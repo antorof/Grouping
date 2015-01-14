@@ -56,6 +56,7 @@ public class InvitacionesFragment extends Fragment
             @Override
             public void onClick(View view)
             {
+                UIUtils.crearToast("Funcionalidad aún no creada", getActivity());
             }
         });
     }
